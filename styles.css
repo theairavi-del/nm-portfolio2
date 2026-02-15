@@ -1380,19 +1380,33 @@ a {
 
   .lightbox {
     padding: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .lightbox-nav {
     width: 44px;
     height: 44px;
+    position: relative;
+    top: auto;
+    transform: none;
+    margin: 10px 5px 0;
   }
 
   .lightbox-prev {
-    left: 10px;
+    left: auto;
   }
 
   .lightbox-next {
-    right: 10px;
+    right: auto;
+  }
+
+  .lightbox-controls {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
   }
 }
 
