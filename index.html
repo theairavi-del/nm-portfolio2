@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nico Maggioli Portfolio</title>
+    <meta name="description" content="Personal portfolio gallery by Nico Maggioli." />
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png?v=20260213-3" />
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png?v=20260213-3" />
+    <link rel="stylesheet" href="./styles.css?v=arena-20260214-3" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="topbar-left">
+          <a class="brand-mark" href="./index.html" aria-label="Home">
+            <img src="./logo-nm.png" alt="Nico Maggioli logo" loading="eager" decoding="async" />
+          </a>
+          <a class="search-link" href="./index.html" aria-label="Portfolio home">Nico Maggioli</a>
+        </div>
+
+        <div class="topbar-right">
+          <nav class="top-nav" aria-label="Site">
+            <a class="top-nav-link is-active" href="./index.html">Work</a>
+            <a class="top-nav-link" href="./about.html">About</a>
+            <a class="top-nav-link" href="./contact.html">Contact</a>
+          </nav>
+        </div>
+      </header>
+
+      <main class="page-shell">
+        <section class="channel-head">
+          <h1 class="channel-title">Nico Maggioli / Design Lab / Live Work Archive</h1>
+          <p class="channel-subtitle channel-subtitle-single-line">
+            Creative strategy, visual identity, and 3D-driven systems. This board is a collection of my&nbsp;work&nbsp;throughout&nbsp;the&nbsp;years.
+          </p>
+        </section>
+
+        <section class="channel-meta" aria-label="Portfolio details">
+          <article class="meta-col">
+            <h2>Dataset</h2>
+            <dl class="meta-list">
+              <div>
+                <dt>Since</dt>
+                <dd id="metaStarted" data-static="true">2014</dd>
+              </div>
+              <div>
+                <dt>Currently At</dt>
+                <dd id="metaModified" data-static="true">Sprout Studios</dd>
+              </div>
+              <div>
+                <dt>Clients</dt>
+                <dd id="metaLength" data-static="true">78</dd>
+              </div>
+            </dl>
+          </article>
+
+          <article class="meta-col">
+            <h2>Skills</h2>
+            <ul class="meta-tags">
+              <li>Creative strategy</li>
+              <li>Visual identity</li>
+              <li>3D visualization</li>
+              <li>AI-assisted exploration</li>
+            </ul>
+          </article>
+
+          <p class="status-pill" id="statusPill">Connecting...</p>
+        </section>
+
+        <section class="board-wrap">
+          <section class="board" id="board" aria-live="polite"></section>
+          <div class="empty-state" id="emptyState" hidden>
+            <h2>No work uploaded yet</h2>
+            <p>Add media to <code>public/media</code> and it will appear&nbsp;here.</p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div class="lightbox" id="lightbox" hidden>
+      <button class="lightbox-close" id="lightboxClose" aria-label="Close image">Close</button>
+      <button class="lightbox-nav lightbox-prev" id="lightboxPrev" type="button" aria-label="Previous image">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" /></svg>
+      </button>
+      <figure class="lightbox-content" id="lightboxContent">
+        <img id="lightboxImage" alt="Expanded portfolio image" />
+        <video id="lightboxVideo" muted loop playsinline preload="metadata" hidden></video>
+      </figure>
+      <button class="lightbox-nav lightbox-next" id="lightboxNext" type="button" aria-label="Next image">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
+      </button>
+    </div>
+
+    <template id="cardTemplate">
+      <article class="pin-card pin-card-image">
+        <button class="pin-button" type="button">
+          <div class="pin-media-slot"></div>
+        </button>
+      </article>
+    </template>
+
+    <script src="./media-index.js?v=20260215-1"></script>
+    <script src="./app.js?v=arena-20260215-1" defer></script>
+  </body>
+</html>

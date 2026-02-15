@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | Nico Maggioli</title>
+    <meta name="description" content="Contact Nico Maggioli for collaborations and project inquiries." />
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png?v=20260213-3" />
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png?v=20260213-3" />
+    <link rel="stylesheet" href="./styles.css?v=arena-20260214-3" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="topbar-left">
+          <a class="brand-mark" href="./index.html" aria-label="Home">
+            <img src="./logo-nm.png" alt="Nico Maggioli logo" loading="eager" decoding="async" />
+          </a>
+          <a class="search-link" href="./index.html" aria-label="Portfolio home">Nico Maggioli</a>
+        </div>
+
+        <div class="topbar-right">
+          <nav class="top-nav" aria-label="Site">
+            <a class="top-nav-link" href="./index.html">Work</a>
+            <a class="top-nav-link" href="./about.html">About</a>
+            <a class="top-nav-link is-active" href="./contact.html">Contact</a>
+          </nav>
+        </div>
+      </header>
+
+      <main class="page-shell subpage-shell contact-page">
+        <section class="channel-head">
+          <h1 class="channel-title">Nico Maggioli / Contact / Project Intake</h1>
+          <p class="channel-subtitle">Input the brief. Output is a focused response with direction, scope, and&nbsp;timing.</p>
+        </section>
+
+        <section class="contact-layout compact-contact-layout">
+          <article class="sub-card contact-form-card">
+            <h2>Inquiry Form</h2>
+            <p>Fill this once to generate a clean email&nbsp;draft.</p>
+            <form class="contact-form" id="contactForm">
+              <div class="contact-form-row">
+                <div class="form-field">
+                  <label for="contactName">Name</label>
+                  <input id="contactName" name="name" type="text" required />
+                </div>
+                <div class="form-field">
+                  <label for="contactEmail">Email</label>
+                  <input id="contactEmail" name="email" type="email" required />
+                </div>
+              </div>
+
+              <div class="contact-form-row">
+                <div class="form-field">
+                  <label for="contactProject">Project Type</label>
+                  <input id="contactProject" name="project" type="text" placeholder="Branding, campaign, web, etc." />
+                </div>
+                <div class="form-field">
+                  <label for="contactTimeline">Timeline</label>
+                  <input id="contactTimeline" name="timeline" type="text" placeholder="e.g. Start May 6, deadline June&nbsp;14" />
+                </div>
+              </div>
+
+              <div class="form-field">
+                <label for="contactMessage">Message</label>
+                <textarea
+                  id="contactMessage"
+                  name="message"
+                  required
+                  rows="12"
+                  placeholder="Hi Nico,
+
+I am reaching out about [project type].
+
+Goal:
+Audience:
+Deliverables:
+Timeline:
+Budget range:
+Reference links:
+
+Thanks,
+[Your name]"
+                ></textarea>
+              </div>
+              <button class="action-chip contact-submit" type="submit">Send Email</button>
+            </form>
+          </article>
+
+          <div class="contact-side-stack">
+            <article class="sub-card contact-direct-card">
+              <h2>Direct Channels</h2>
+              <div class="contact-links">
+                <a class="contact-link" href="mailto:nicomaglioli@gmail.com">Email</a>
+                <a class="contact-link" href="https://www.instagram.com/nico.maggioli/" target="_blank" rel="noreferrer">Instagram</a>
+                <a class="contact-link" href="https://www.linkedin.com/in/nicomaggioli/" target="_blank" rel="noreferrer">LinkedIn</a>
+              </div>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      const contactForm = document.getElementById('contactForm');
+      const contactEmail = 'nicomaglioli@gmail.com';
+
+      if (contactForm) {
+        contactForm.addEventListener('submit', (event) => {
+          event.preventDefault();
+
+          const formData = new FormData(contactForm);
+          const name = String(formData.get('name') || '').trim();
+          const email = String(formData.get('email') || '').trim();
+          const project = String(formData.get('project') || '').trim();
+          const timeline = String(formData.get('timeline') || '').trim();
+          const message = String(formData.get('message') || '').trim();
+
+          const subject = encodeURIComponent(project ? `Project Inquiry: ${project}` : 'Project Inquiry');
+          const body = encodeURIComponent(
+            `Name: ${name}\nEmail: ${email}\nProject: ${project}\nTimeline: ${timeline}\n\n${message}`
+          );
+
+          window.location.href = `mailto:${contactEmail}?subject=${subject}&body=${body}`;
+        });
+      }
+    </script>
+  </body>
+</html>
