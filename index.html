@@ -80,16 +80,24 @@
 
     <div class="lightbox" id="lightbox" hidden>
       <button class="lightbox-close" id="lightboxClose" aria-label="Close image">Close</button>
-      <button class="lightbox-nav lightbox-prev" id="lightboxPrev" type="button" aria-label="Previous image">
+      <button class="lightbox-nav lightbox-prev desktop-nav" id="lightboxPrevDesktop" type="button" aria-label="Previous image">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" /></svg>
       </button>
       <figure class="lightbox-content" id="lightboxContent">
         <img id="lightboxImage" alt="Expanded portfolio image" />
         <video id="lightboxVideo" muted loop playsinline preload="metadata" hidden></video>
       </figure>
-      <button class="lightbox-nav lightbox-next" id="lightboxNext" type="button" aria-label="Next image">
+      <button class="lightbox-nav lightbox-next desktop-nav" id="lightboxNextDesktop" type="button" aria-label="Next image">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
       </button>
+      <div class="lightbox-controls mobile-nav">
+        <button class="lightbox-nav lightbox-prev" id="lightboxPrev" type="button" aria-label="Previous image">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" /></svg>
+        </button>
+        <button class="lightbox-nav lightbox-next" id="lightboxNext" type="button" aria-label="Next image">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
+        </button>
+      </div>
     </div>
 
     <template id="cardTemplate">
