@@ -1187,6 +1187,14 @@ a {
   height: 26px;
 }
 
+.mobile-nav {
+  display: none;
+}
+
+.desktop-nav {
+  display: block;
+}
+
 .lightbox-nav svg * {
   fill: none;
   stroke: currentColor;
@@ -1380,33 +1388,42 @@ a {
 
   .lightbox {
     padding: 14px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
   }
 
   .lightbox-nav {
     width: 44px;
     height: 44px;
-    position: relative;
-    top: auto;
-    transform: none;
-    margin: 10px 5px 0;
   }
 
   .lightbox-prev {
-    left: auto;
+    left: 10px;
   }
 
   .lightbox-next {
-    right: auto;
+    right: 10px;
   }
 
-  .lightbox-controls {
-    display: flex;
+  .desktop-nav {
+    display: none !important;
+  }
+
+  .mobile-nav {
+    display: flex !important;
     justify-content: center;
-    gap: 20px;
-    margin-top: 10px;
+    align-items: center;
+    gap: 30px;
+    margin-top: 15px;
+    width: 100%;
+  }
+
+  .mobile-nav .lightbox-nav {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    transform: none;
+    display: inline-flex;
+    margin: 0;
   }
 }
 
