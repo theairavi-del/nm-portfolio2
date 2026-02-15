@@ -8,7 +8,18 @@
     <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png?v=20260213-3" />
     <link rel="apple-touch-icon" href="./apple-touch-icon.png?v=20260213-3" />
     <link rel="stylesheet" href="./styles.css?v=arena-20260214-3" />
-  </head>
+    <!--
+    🥚 EASTER EGG HUNT 🥚
+    
+    Secrets hidden in this site:
+    1. Konami Code: ↑ ↑ ↓ ↓ ← → ← → B A
+    2. Hold SHIFT + click logo 5 times
+    3. Click the status pill 3 times
+    4. Press Ctrl+Shift+M for Matrix mode
+    5. Check the console for more secrets...
+    
+    Happy hunting! 🎨
+    -->
   <body>
     <div class="app-shell">
       <header class="topbar">
@@ -99,6 +110,34 @@
         </button>
       </div>
     </div>
+
+    <!-- 🥚 Hidden Easter Egg Element - Type "nico" to reveal 🥚 -->
+    <div id="easterEggMessage" style="position: fixed; bottom: 20px; right: 20px; background: rgba(74, 158, 255, 0.1); border: 1px solid rgba(74, 158, 255, 0.3); padding: 16px 20px; border-radius: 8px; font-size: 13px; color: var(--text); opacity: 0; pointer-events: none; transition: opacity 0.3s ease; z-index: 100; max-width: 250px;">
+      <strong>🎨 You found a secret!</strong><br>
+      <span style="color: var(--muted);">Keep exploring for more hidden gems...</span>
+    </div>
+    
+    <script>
+    // Type "nico" to reveal Easter egg
+    let typedCode = '';
+    const secretCode = 'nico';
+    
+    document.addEventListener('keydown', (e) => {
+      typedCode += e.key.toLowerCase();
+      typedCode = typedCode.slice(-secretCode.length);
+      
+      if (typedCode === secretCode) {
+        const egg = document.getElementById('easterEggMessage');
+        egg.style.opacity = '1';
+        egg.style.pointerEvents = 'auto';
+        
+        setTimeout(() => {
+          egg.style.opacity = '0';
+          egg.style.pointerEvents = 'none';
+        }, 5000);
+      }
+    });
+    </script>
 
     <template id="cardTemplate">
       <article class="pin-card pin-card-image">

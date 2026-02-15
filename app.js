@@ -860,4 +860,154 @@ document.addEventListener('keydown', (event) => {
   }
 });
 
+// 🥚 EASTER EGGS 🥚
+
+// 1. Konami Code Easter Egg
+const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+let konamiIndex = 0;
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === konamiCode[konamiIndex]) {
+    konamiIndex++;
+    if (konamiIndex === konamiCode.length) {
+      activateKonamiMode();
+      konamiIndex = 0;
+    }
+  } else {
+    konamiIndex = 0;
+  }
+});
+
+function activateKonamiMode() {
+  document.body.style.filter = 'hue-rotate(180deg) saturate(2)';
+  setStatus('🎮 KONAMI CODE ACTIVATED - SECRET MODE UNLOCKED', 'success');
+  
+  // Add floating emojis
+  for (let i = 0; i < 20; i++) {
+    setTimeout(() => createFloatingEmoji(), i * 100);
+  }
+  
+  // Reset after 10 seconds
+  setTimeout(() => {
+    document.body.style.filter = '';
+    setStatus('Loaded • ' + formatSyncTime(), 'success');
+  }, 10000);
+}
+
+function createFloatingEmoji() {
+  const emoji = document.createElement('div');
+  emoji.textContent = ['🎨', '🎭', '🎪', '🎯', '🎲', '🎸', '🎺', '🎻'][Math.floor(Math.random() * 8)];
+  emoji.style.cssText = `
+    position: fixed;
+    font-size: 24px;
+    left: ${Math.random() * 100}vw;
+    top: 100vh;
+    pointer-events: none;
+    z-index: 9999;
+    animation: floatUp 3s ease-out forwards;
+  `;
+  document.body.appendChild(emoji);
+  
+  setTimeout(() => emoji.remove(), 3000);
+}
+
+// Add float animation
+const style = document.createElement('style');
+style.textContent = `
+  @keyframes floatUp {
+    to {
+      transform: translateY(-110vh) rotate(360deg);
+      opacity: 0;
+    }
+  }
+`;
+document.head.appendChild(style);
+
+// 2. Secret Logo Click Easter Egg
+let logoClickCount = 0;
+const brandMark = document.querySelector('.brand-mark');
+if (brandMark) {
+  brandMark.addEventListener('click', (e) => {
+    if (e.shiftKey) {
+      e.preventDefault();
+      logoClickCount++;
+      
+      if (logoClickCount === 5) {
+        document.body.style.cursor = 'url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'32\' height=\'32\'><text y=\'24\' font-size=\'20\'>🎨</text></svg>"), auto';
+        setStatus('🖌️ SECRET BRUSH MODE ACTIVATED', 'success');
+        logoClickCount = 0;
+        
+        setTimeout(() => {
+          document.body.style.cursor = '';
+        }, 5000);
+      }
+    }
+  });
+}
+
+// 3. Status Pill Secret Click
+let statusClickCount = 0;
+const statusPillEl = document.getElementById('statusPill');
+if (statusPillEl) {
+  statusPillEl.style.cursor = 'pointer';
+  statusPillEl.addEventListener('click', () => {
+    statusClickCount++;
+    if (statusClickCount === 3) {
+      const messages = [
+        '✨ You found a secret!',
+        '🎭 Keep exploring...',
+        '🎪 Magic is everywhere',
+        '🎯 Nice clicking!',
+        '🎲 Roll the dice'
+      ];
+      setStatus(messages[Math.floor(Math.random() * messages.length)], 'success');
+      statusClickCount = 0;
+    }
+  });
+}
+
+// 4. Console Secret Message
+console.log('%c🎨 SECRET DISCOVERED! 🎨', 'font-size: 24px; font-weight: bold; color: #4a9eff;');
+console.log('%cYou\'ve found the developer console!', 'font-size: 14px; color: #666;');
+console.log('%cTry typing: showSecrets()', 'font-size: 14px; color: #4a9eff; font-style: italic;');
+
+window.showSecrets = function() {
+  console.log('%c🥚 EASTER EGGS FOUND:', 'font-size: 16px; font-weight: bold; color: #4a9eff;');
+  console.log('%c1. Konami Code:', 'font-weight: bold;');
+  console.log('   ↑ ↑ ↓ ↓ ← → ← → B A');
+  console.log('   (Changes colors & spawns emojis)');
+  console.log('%c2. Secret Logo:', 'font-weight: bold;');
+  console.log('   Hold SHIFT and click logo 5 times');
+  console.log('   (Changes cursor to brush)');
+  console.log('%c3. Status Pill:', 'font-weight: bold;');
+  console.log('   Click status pill 3 times');
+  console.log('   (Shows random messages)');
+  console.log('%c4. This Console:', 'font-weight: bold;');
+  console.log('   You\'re looking at it right now!');
+  
+  return '🎉 All secrets revealed! Check console for details.';
+};
+
+// 5. Secret Key Combo - "Matrix Mode"
+let matrixMode = false;
+document.addEventListener('keydown', (event) => {
+  // Ctrl/Cmd + Shift + M
+  if ((event.ctrlKey || event.metaKey) && event.shiftKey && event.key === 'M') {
+    event.preventDefault();
+    matrixMode = !matrixMode;
+    
+    if (matrixMode) {
+      document.body.style.cssText += `
+        filter: hue-rotate(90deg) contrast(1.2);
+        font-family: 'Courier New', monospace !important;
+      `;
+      setStatus('💊 MATRIX MODE ENGAGED', 'success');
+    } else {
+      document.body.style.filter = '';
+      document.body.style.fontFamily = '';
+      setStatus('Loaded • ' + formatSyncTime(), 'success');
+    }
+  }
+});
+
 loadImages();
