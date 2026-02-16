@@ -100,7 +100,7 @@ function getStaticManifestImages() {
   return rawManifest
     .map((item) => normalizeStaticManifestItem(item))
     .filter(Boolean)
-    .sort((a, b) => b.modifiedMs - a.modifiedMs);
+    .sort((a, b) => a.name.localeCompare(b.name));
 }
 
 async function fetchImagePayload() {
