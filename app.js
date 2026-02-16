@@ -301,12 +301,30 @@ function loadCardImage(imageElement) {
     imageElement.fetchPriority = imageElement.dataset.priority === 'high' ? 'high' : 'low';
   }
 
-  if (imageElement.complete) {
+  const onImageLoad = () => {
+    const naturalWidth = imageElement.naturalWidth;
+    const naturalHeight = imageElement.naturalHeight;
+
+    if (naturalWidth > 0 && naturalHeight > 0) {
+      const mediaSlot = imageElement.closest('.pin-media-slot');
+      if (mediaSlot) {
+        mediaSlot.style.aspectRatio = `${naturalWidth} / ${naturalHeight}`;
+      }
+      imageElement.dataset.width = String(naturalWidth);
+      imageElement.dataset.height = String(naturalHeight);
+      imageElement.width = naturalWidth;
+      imageElement.height = naturalHeight;
+    }
+
     markCardImageReady(imageElement);
+  };
+
+  if (imageElement.complete) {
+    onImageLoad();
     return;
   }
 
-  imageElement.addEventListener('load', () => markCardImageReady(imageElement), { once: true });
+  imageElement.addEventListener('load', onImageLoad, { once: true });
   imageElement.addEventListener('error', () => markCardImageReady(imageElement), { once: true });
 }
 
