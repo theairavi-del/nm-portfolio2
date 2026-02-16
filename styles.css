@@ -995,6 +995,8 @@ a {
   display: block;
   background: #090b10;
   overflow: hidden;
+  min-height: 200px;
+  contain: layout style paint;
 }
 
 .pin-image {
