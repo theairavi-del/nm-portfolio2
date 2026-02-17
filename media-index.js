@@ -6,8 +6,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/y5kTbqM6LcCBB2lWSH6zdzWYE8.jpg",
-    "thumbUrl": "./media/y5kTbqM6LcCBB2lWSH6zdzWYE8.jpg",
+    "url": "/media/y5kTbqM6LcCBB2lWSH6zdzWYE8.jpg",
+    "thumbUrl": "/media/y5kTbqM6LcCBB2lWSH6zdzWYE8.jpg",
     "key": "y5kTbqM6LcCBB2lWSH6zdzWYE8.jpg-1771031046714"
   },
   {
@@ -17,8 +17,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/uakPJZ9fdWfo9xWHQIkF5kR0k.png",
-    "thumbUrl": "./media/uakPJZ9fdWfo9xWHQIkF5kR0k.png",
+    "url": "/media/uakPJZ9fdWfo9xWHQIkF5kR0k.png",
+    "thumbUrl": "/media/uakPJZ9fdWfo9xWHQIkF5kR0k.png",
     "key": "uakPJZ9fdWfo9xWHQIkF5kR0k.png-1771031046642"
   },
   {
@@ -28,8 +28,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/tGtBnkeGzf076lDqPLRiB6G0ko.png",
-    "thumbUrl": "./media/tGtBnkeGzf076lDqPLRiB6G0ko.png",
+    "url": "/media/tGtBnkeGzf076lDqPLRiB6G0ko.png",
+    "thumbUrl": "/media/tGtBnkeGzf076lDqPLRiB6G0ko.png",
     "key": "tGtBnkeGzf076lDqPLRiB6G0ko.png-1771031046615"
   },
   {
@@ -39,8 +39,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/srnMKwjmWc2QyMM9D3Hc9EGaP3Y.png",
-    "thumbUrl": "./media/srnMKwjmWc2QyMM9D3Hc9EGaP3Y.png",
+    "url": "/media/srnMKwjmWc2QyMM9D3Hc9EGaP3Y.png",
+    "thumbUrl": "/media/srnMKwjmWc2QyMM9D3Hc9EGaP3Y.png",
     "key": "srnMKwjmWc2QyMM9D3Hc9EGaP3Y.png-1771031046587"
   },
   {
@@ -50,8 +50,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/rQ0dNWoH2pQNoX0W8WbrAnwS4E.jpg",
-    "thumbUrl": "./media/rQ0dNWoH2pQNoX0W8WbrAnwS4E.jpg",
+    "url": "/media/rQ0dNWoH2pQNoX0W8WbrAnwS4E.jpg",
+    "thumbUrl": "/media/rQ0dNWoH2pQNoX0W8WbrAnwS4E.jpg",
     "key": "rQ0dNWoH2pQNoX0W8WbrAnwS4E.jpg-1771031046558"
   },
   {
@@ -61,8 +61,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/qqDgYRckqMXkKSR02GaXjUCm5k.png",
-    "thumbUrl": "./media/qqDgYRckqMXkKSR02GaXjUCm5k.png",
+    "url": "/media/qqDgYRckqMXkKSR02GaXjUCm5k.png",
+    "thumbUrl": "/media/qqDgYRckqMXkKSR02GaXjUCm5k.png",
     "key": "qqDgYRckqMXkKSR02GaXjUCm5k.png-1771031046517"
   },
   {
@@ -72,8 +72,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/qKIyNE3qFv1YouZ6seU0ZcTzbOk.jpg",
-    "thumbUrl": "./media/qKIyNE3qFv1YouZ6seU0ZcTzbOk.jpg",
+    "url": "/media/qKIyNE3qFv1YouZ6seU0ZcTzbOk.jpg",
+    "thumbUrl": "/media/qKIyNE3qFv1YouZ6seU0ZcTzbOk.jpg",
     "key": "qKIyNE3qFv1YouZ6seU0ZcTzbOk.jpg-1771031046490"
   },
   {
@@ -83,8 +83,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/pyZzlQoTuM1QRqMITmjb82j5bs.png",
-    "thumbUrl": "./media/pyZzlQoTuM1QRqMITmjb82j5bs.png",
+    "url": "/media/pyZzlQoTuM1QRqMITmjb82j5bs.png",
+    "thumbUrl": "/media/pyZzlQoTuM1QRqMITmjb82j5bs.png",
     "key": "pyZzlQoTuM1QRqMITmjb82j5bs.png-1771031046461"
   },
   {
@@ -94,8 +94,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/oMUIz83iv7etVABa58wZBmOo46s.jpg",
-    "thumbUrl": "./media/oMUIz83iv7etVABa58wZBmOo46s.jpg",
+    "url": "/media/oMUIz83iv7etVABa58wZBmOo46s.jpg",
+    "thumbUrl": "/media/oMUIz83iv7etVABa58wZBmOo46s.jpg",
     "key": "oMUIz83iv7etVABa58wZBmOo46s.jpg-1771031046431"
   },
   {
@@ -105,8 +105,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/mMwQq4s1bMXNTrRLSi4oH9seGM.jpg",
-    "thumbUrl": "./media/mMwQq4s1bMXNTrRLSi4oH9seGM.jpg",
+    "url": "/media/mMwQq4s1bMXNTrRLSi4oH9seGM.jpg",
+    "thumbUrl": "/media/mMwQq4s1bMXNTrRLSi4oH9seGM.jpg",
     "key": "mMwQq4s1bMXNTrRLSi4oH9seGM.jpg-1771031046402"
   },
   {
@@ -116,8 +116,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/m2yKMf12PMeNfKKVfbFzQA7NGE4.jpg",
-    "thumbUrl": "./media/m2yKMf12PMeNfKKVfbFzQA7NGE4.jpg",
+    "url": "/media/m2yKMf12PMeNfKKVfbFzQA7NGE4.jpg",
+    "thumbUrl": "/media/m2yKMf12PMeNfKKVfbFzQA7NGE4.jpg",
     "key": "m2yKMf12PMeNfKKVfbFzQA7NGE4.jpg-1771031046372"
   },
   {
@@ -127,8 +127,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/jrkxNMLxWtb1AV4PoQC2iGHB04.jpg",
-    "thumbUrl": "./media/jrkxNMLxWtb1AV4PoQC2iGHB04.jpg",
+    "url": "/media/jrkxNMLxWtb1AV4PoQC2iGHB04.jpg",
+    "thumbUrl": "/media/jrkxNMLxWtb1AV4PoQC2iGHB04.jpg",
     "key": "jrkxNMLxWtb1AV4PoQC2iGHB04.jpg-1771031046336"
   },
   {
@@ -138,8 +138,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/hhRbTVjnRS3S8C3k5WJYJEpOQ.png",
-    "thumbUrl": "./media/hhRbTVjnRS3S8C3k5WJYJEpOQ.png",
+    "url": "/media/hhRbTVjnRS3S8C3k5WJYJEpOQ.png",
+    "thumbUrl": "/media/hhRbTVjnRS3S8C3k5WJYJEpOQ.png",
     "key": "hhRbTVjnRS3S8C3k5WJYJEpOQ.png-1771031046309"
   },
   {
@@ -149,8 +149,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/dQgAdJcuwicqUwAu6kEg7ez4oP8.jpg",
-    "thumbUrl": "./media/dQgAdJcuwicqUwAu6kEg7ez4oP8.jpg",
+    "url": "/media/dQgAdJcuwicqUwAu6kEg7ez4oP8.jpg",
+    "thumbUrl": "/media/dQgAdJcuwicqUwAu6kEg7ez4oP8.jpg",
     "key": "dQgAdJcuwicqUwAu6kEg7ez4oP8.jpg-1771031046258"
   },
   {
@@ -160,8 +160,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/blsGF3cIs51IwUhA6W1uXVnr5o.jpg",
-    "thumbUrl": "./media/blsGF3cIs51IwUhA6W1uXVnr5o.jpg",
+    "url": "/media/blsGF3cIs51IwUhA6W1uXVnr5o.jpg",
+    "thumbUrl": "/media/blsGF3cIs51IwUhA6W1uXVnr5o.jpg",
     "key": "blsGF3cIs51IwUhA6W1uXVnr5o.jpg-1771031046212"
   },
   {
@@ -171,8 +171,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/bJLK9A37bVhvpBpn289YyCNi7Mc.png",
-    "thumbUrl": "./media/bJLK9A37bVhvpBpn289YyCNi7Mc.png",
+    "url": "/media/bJLK9A37bVhvpBpn289YyCNi7Mc.png",
+    "thumbUrl": "/media/bJLK9A37bVhvpBpn289YyCNi7Mc.png",
     "key": "bJLK9A37bVhvpBpn289YyCNi7Mc.png-1771031046184"
   },
   {
@@ -182,8 +182,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/YDULmcbDmbODnUn0Je3j1aFec.jpg",
-    "thumbUrl": "./media/YDULmcbDmbODnUn0Je3j1aFec.jpg",
+    "url": "/media/YDULmcbDmbODnUn0Je3j1aFec.jpg",
+    "thumbUrl": "/media/YDULmcbDmbODnUn0Je3j1aFec.jpg",
     "key": "YDULmcbDmbODnUn0Je3j1aFec.jpg-1771031046155"
   },
   {
@@ -193,8 +193,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/SAzg9n9zHIxksO920pos8d2Pfn8.png",
-    "thumbUrl": "./media/SAzg9n9zHIxksO920pos8d2Pfn8.png",
+    "url": "/media/SAzg9n9zHIxksO920pos8d2Pfn8.png",
+    "thumbUrl": "/media/SAzg9n9zHIxksO920pos8d2Pfn8.png",
     "key": "SAzg9n9zHIxksO920pos8d2Pfn8.png-1771031046106"
   },
   {
@@ -204,8 +204,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/R5fI6psdR1TUZgDp5LXWOr1Q41A.jpg",
-    "thumbUrl": "./media/R5fI6psdR1TUZgDp5LXWOr1Q41A.jpg",
+    "url": "/media/R5fI6psdR1TUZgDp5LXWOr1Q41A.jpg",
+    "thumbUrl": "/media/R5fI6psdR1TUZgDp5LXWOr1Q41A.jpg",
     "key": "R5fI6psdR1TUZgDp5LXWOr1Q41A.jpg-1771031046077"
   },
   {
@@ -215,8 +215,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/QqGEhc9FCcYsA1TRJYgdGr0gfWo.png",
-    "thumbUrl": "./media/QqGEhc9FCcYsA1TRJYgdGr0gfWo.png",
+    "url": "/media/QqGEhc9FCcYsA1TRJYgdGr0gfWo.png",
+    "thumbUrl": "/media/QqGEhc9FCcYsA1TRJYgdGr0gfWo.png",
     "key": "QqGEhc9FCcYsA1TRJYgdGr0gfWo.png-1771031046037"
   },
   {
@@ -226,8 +226,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/LEJ7pqBAM8OGAoF3FuGtmR0F6I.jpg",
-    "thumbUrl": "./media/LEJ7pqBAM8OGAoF3FuGtmR0F6I.jpg",
+    "url": "/media/LEJ7pqBAM8OGAoF3FuGtmR0F6I.jpg",
+    "thumbUrl": "/media/LEJ7pqBAM8OGAoF3FuGtmR0F6I.jpg",
     "key": "LEJ7pqBAM8OGAoF3FuGtmR0F6I.jpg-1771031045987"
   },
   {
@@ -237,8 +237,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/JF6R0ECkzhCPTfTCG8gg3UQVbo.jpg",
-    "thumbUrl": "./media/JF6R0ECkzhCPTfTCG8gg3UQVbo.jpg",
+    "url": "/media/JF6R0ECkzhCPTfTCG8gg3UQVbo.jpg",
+    "thumbUrl": "/media/JF6R0ECkzhCPTfTCG8gg3UQVbo.jpg",
     "key": "JF6R0ECkzhCPTfTCG8gg3UQVbo.jpg-1771031045961"
   },
   {
@@ -248,8 +248,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/I0F3qXKQjn1qBbKEE9kot0O5I.jpg",
-    "thumbUrl": "./media/I0F3qXKQjn1qBbKEE9kot0O5I.jpg",
+    "url": "/media/I0F3qXKQjn1qBbKEE9kot0O5I.jpg",
+    "thumbUrl": "/media/I0F3qXKQjn1qBbKEE9kot0O5I.jpg",
     "key": "I0F3qXKQjn1qBbKEE9kot0O5I.jpg-1771031045927"
   },
   {
@@ -259,8 +259,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/GyrJoJXSF7nzD9NfEMsaWc8OYHY.jpg",
-    "thumbUrl": "./media/GyrJoJXSF7nzD9NfEMsaWc8OYHY.jpg",
+    "url": "/media/GyrJoJXSF7nzD9NfEMsaWc8OYHY.jpg",
+    "thumbUrl": "/media/GyrJoJXSF7nzD9NfEMsaWc8OYHY.jpg",
     "key": "GyrJoJXSF7nzD9NfEMsaWc8OYHY.jpg-1771031045897"
   },
   {
@@ -270,8 +270,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/GZEe7yq1XrVuLXNoYnqADTPGzbw.jpg",
-    "thumbUrl": "./media/GZEe7yq1XrVuLXNoYnqADTPGzbw.jpg",
+    "url": "/media/GZEe7yq1XrVuLXNoYnqADTPGzbw.jpg",
+    "thumbUrl": "/media/GZEe7yq1XrVuLXNoYnqADTPGzbw.jpg",
     "key": "GZEe7yq1XrVuLXNoYnqADTPGzbw.jpg-1771031045865"
   },
   {
@@ -281,8 +281,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/FmQnCiLRkJc4fyPxbeU0xJyuvY.jpg",
-    "thumbUrl": "./media/FmQnCiLRkJc4fyPxbeU0xJyuvY.jpg",
+    "url": "/media/FmQnCiLRkJc4fyPxbeU0xJyuvY.jpg",
+    "thumbUrl": "/media/FmQnCiLRkJc4fyPxbeU0xJyuvY.jpg",
     "key": "FmQnCiLRkJc4fyPxbeU0xJyuvY.jpg-1771031045826"
   },
   {
@@ -292,8 +292,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/EAVuTSBYNEc3U6M660tjMqNrrY.png",
-    "thumbUrl": "./media/EAVuTSBYNEc3U6M660tjMqNrrY.png",
+    "url": "/media/EAVuTSBYNEc3U6M660tjMqNrrY.png",
+    "thumbUrl": "/media/EAVuTSBYNEc3U6M660tjMqNrrY.png",
     "key": "EAVuTSBYNEc3U6M660tjMqNrrY.png-1771031045799"
   },
   {
@@ -303,8 +303,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/E6VjeGQcXe77TcscquOuat5Q98.jpg",
-    "thumbUrl": "./media/E6VjeGQcXe77TcscquOuat5Q98.jpg",
+    "url": "/media/E6VjeGQcXe77TcscquOuat5Q98.jpg",
+    "thumbUrl": "/media/E6VjeGQcXe77TcscquOuat5Q98.jpg",
     "key": "E6VjeGQcXe77TcscquOuat5Q98.jpg-1771031045769"
   },
   {
@@ -314,8 +314,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/DqlL3mqz6aBFxhObPfO4MtEtR3Y.png",
-    "thumbUrl": "./media/DqlL3mqz6aBFxhObPfO4MtEtR3Y.png",
+    "url": "/media/DqlL3mqz6aBFxhObPfO4MtEtR3Y.png",
+    "thumbUrl": "/media/DqlL3mqz6aBFxhObPfO4MtEtR3Y.png",
     "key": "DqlL3mqz6aBFxhObPfO4MtEtR3Y.png-1771031045743"
   },
   {
@@ -325,8 +325,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/DH1Am2OOLYUvoBiI6Bjy4Ss1p9g.jpg",
-    "thumbUrl": "./media/DH1Am2OOLYUvoBiI6Bjy4Ss1p9g.jpg",
+    "url": "/media/DH1Am2OOLYUvoBiI6Bjy4Ss1p9g.jpg",
+    "thumbUrl": "/media/DH1Am2OOLYUvoBiI6Bjy4Ss1p9g.jpg",
     "key": "DH1Am2OOLYUvoBiI6Bjy4Ss1p9g.jpg-1771031045713"
   },
   {
@@ -336,8 +336,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/9eLuwca92zYxg5FChUBE8wQUBA.jpg",
-    "thumbUrl": "./media/9eLuwca92zYxg5FChUBE8wQUBA.jpg",
+    "url": "/media/9eLuwca92zYxg5FChUBE8wQUBA.jpg",
+    "thumbUrl": "/media/9eLuwca92zYxg5FChUBE8wQUBA.jpg",
     "key": "9eLuwca92zYxg5FChUBE8wQUBA.jpg-1771031045677"
   },
   {
@@ -347,8 +347,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/85fobkSGPkuQzC2V5YhkExaSpNo.jpg",
-    "thumbUrl": "./media/85fobkSGPkuQzC2V5YhkExaSpNo.jpg",
+    "url": "/media/85fobkSGPkuQzC2V5YhkExaSpNo.jpg",
+    "thumbUrl": "/media/85fobkSGPkuQzC2V5YhkExaSpNo.jpg",
     "key": "85fobkSGPkuQzC2V5YhkExaSpNo.jpg-1771031045641"
   },
   {
@@ -358,8 +358,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/6OKQK50fY1xbJmbpztnsnPPe3Q.jpg",
-    "thumbUrl": "./media/6OKQK50fY1xbJmbpztnsnPPe3Q.jpg",
+    "url": "/media/6OKQK50fY1xbJmbpztnsnPPe3Q.jpg",
+    "thumbUrl": "/media/6OKQK50fY1xbJmbpztnsnPPe3Q.jpg",
     "key": "6OKQK50fY1xbJmbpztnsnPPe3Q.jpg-1771031045614"
   },
   {
@@ -369,8 +369,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/30ZaNwqxShKfMaQERCnXcpdr4w.jpg",
-    "thumbUrl": "./media/30ZaNwqxShKfMaQERCnXcpdr4w.jpg",
+    "url": "/media/30ZaNwqxShKfMaQERCnXcpdr4w.jpg",
+    "thumbUrl": "/media/30ZaNwqxShKfMaQERCnXcpdr4w.jpg",
     "key": "30ZaNwqxShKfMaQERCnXcpdr4w.jpg-1771031045587"
   },
   {
@@ -380,8 +380,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/1Yk2pMpmSLqpmgdTXJTKQJfioag.png",
-    "thumbUrl": "./media/1Yk2pMpmSLqpmgdTXJTKQJfioag.png",
+    "url": "/media/1Yk2pMpmSLqpmgdTXJTKQJfioag.png",
+    "thumbUrl": "/media/1Yk2pMpmSLqpmgdTXJTKQJfioag.png",
     "key": "1Yk2pMpmSLqpmgdTXJTKQJfioag.png-1771031045547"
   },
   {
@@ -391,8 +391,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/0UDmd1dqmDXTtj2TMO1w6OYDE6Q.jpg",
-    "thumbUrl": "./media/0UDmd1dqmDXTtj2TMO1w6OYDE6Q.jpg",
+    "url": "/media/0UDmd1dqmDXTtj2TMO1w6OYDE6Q.jpg",
+    "thumbUrl": "/media/0UDmd1dqmDXTtj2TMO1w6OYDE6Q.jpg",
     "key": "0UDmd1dqmDXTtj2TMO1w6OYDE6Q.jpg-1771031045519"
   },
   {
@@ -402,8 +402,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "video",
     "width": null,
     "height": null,
-    "url": "./media/zqoXl3zQcTTxd7XlxVD2M3PsV5A.m4v",
-    "thumbUrl": "./media/zqoXl3zQcTTxd7XlxVD2M3PsV5A.m4v",
+    "url": "/media/zqoXl3zQcTTxd7XlxVD2M3PsV5A.m4v",
+    "thumbUrl": "/media/zqoXl3zQcTTxd7XlxVD2M3PsV5A.m4v",
     "key": "zqoXl3zQcTTxd7XlxVD2M3PsV5A.m4v-1771030828720"
   },
   {
@@ -413,8 +413,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/vd9WduXlVlmMtZKVH3c240u6ksM.jpg",
-    "thumbUrl": "./media/vd9WduXlVlmMtZKVH3c240u6ksM.jpg",
+    "url": "/media/vd9WduXlVlmMtZKVH3c240u6ksM.jpg",
+    "thumbUrl": "/media/vd9WduXlVlmMtZKVH3c240u6ksM.jpg",
     "key": "vd9WduXlVlmMtZKVH3c240u6ksM.jpg-1771030828659"
   },
   {
@@ -424,8 +424,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "video",
     "width": null,
     "height": null,
-    "url": "./media/u8UNP2cl6YAjPLO014aw9Oxe0I.mp4",
-    "thumbUrl": "./media/u8UNP2cl6YAjPLO014aw9Oxe0I.mp4",
+    "url": "/media/u8UNP2cl6YAjPLO014aw9Oxe0I.mp4",
+    "thumbUrl": "/media/u8UNP2cl6YAjPLO014aw9Oxe0I.mp4",
     "key": "u8UNP2cl6YAjPLO014aw9Oxe0I.mp4-1771030828627"
   },
   {
@@ -435,8 +435,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/pesmpmn9FULLSZE9xHk4puSZw.png",
-    "thumbUrl": "./media/pesmpmn9FULLSZE9xHk4puSZw.png",
+    "url": "/media/pesmpmn9FULLSZE9xHk4puSZw.png",
+    "thumbUrl": "/media/pesmpmn9FULLSZE9xHk4puSZw.png",
     "key": "pesmpmn9FULLSZE9xHk4puSZw.png-1771030828599"
   },
   {
@@ -446,8 +446,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/mLuXRK94rfrKkgHZ9doRfrRb90.jpeg",
-    "thumbUrl": "./media/mLuXRK94rfrKkgHZ9doRfrRb90.jpeg",
+    "url": "/media/mLuXRK94rfrKkgHZ9doRfrRb90.jpeg",
+    "thumbUrl": "/media/mLuXRK94rfrKkgHZ9doRfrRb90.jpeg",
     "key": "mLuXRK94rfrKkgHZ9doRfrRb90.jpeg-1771030828569"
   },
   {
@@ -457,8 +457,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/m0WbLdWRgs0pwq0fKU2d4mgMjE.jpeg",
-    "thumbUrl": "./media/m0WbLdWRgs0pwq0fKU2d4mgMjE.jpeg",
+    "url": "/media/m0WbLdWRgs0pwq0fKU2d4mgMjE.jpeg",
+    "thumbUrl": "/media/m0WbLdWRgs0pwq0fKU2d4mgMjE.jpeg",
     "key": "m0WbLdWRgs0pwq0fKU2d4mgMjE.jpeg-1771030828542"
   },
   {
@@ -468,8 +468,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/et1trJo0VjOaRTVBUnL3rU9nnQ.png",
-    "thumbUrl": "./media/et1trJo0VjOaRTVBUnL3rU9nnQ.png",
+    "url": "/media/et1trJo0VjOaRTVBUnL3rU9nnQ.png",
+    "thumbUrl": "/media/et1trJo0VjOaRTVBUnL3rU9nnQ.png",
     "key": "et1trJo0VjOaRTVBUnL3rU9nnQ.png-1771030828513"
   },
   {
@@ -479,8 +479,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/YRRJ0eMrF4B6BDYkHuXC867c9A.jpg",
-    "thumbUrl": "./media/YRRJ0eMrF4B6BDYkHuXC867c9A.jpg",
+    "url": "/media/YRRJ0eMrF4B6BDYkHuXC867c9A.jpg",
+    "thumbUrl": "/media/YRRJ0eMrF4B6BDYkHuXC867c9A.jpg",
     "key": "YRRJ0eMrF4B6BDYkHuXC867c9A.jpg-1771030828487"
   },
   {
@@ -490,8 +490,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "video",
     "width": null,
     "height": null,
-    "url": "./media/Uq98V0e2NmiMfH7g06el9phPN4.mp4",
-    "thumbUrl": "./media/Uq98V0e2NmiMfH7g06el9phPN4.mp4",
+    "url": "/media/Uq98V0e2NmiMfH7g06el9phPN4.mp4",
+    "thumbUrl": "/media/Uq98V0e2NmiMfH7g06el9phPN4.mp4",
     "key": "Uq98V0e2NmiMfH7g06el9phPN4.mp4-1771030828432"
   },
   {
@@ -501,8 +501,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/OmnWIw2vcLOaq8E7hSYpxYtflHE.png",
-    "thumbUrl": "./media/OmnWIw2vcLOaq8E7hSYpxYtflHE.png",
+    "url": "/media/OmnWIw2vcLOaq8E7hSYpxYtflHE.png",
+    "thumbUrl": "/media/OmnWIw2vcLOaq8E7hSYpxYtflHE.png",
     "key": "OmnWIw2vcLOaq8E7hSYpxYtflHE.png-1771030828397"
   },
   {
@@ -512,8 +512,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "video",
     "width": null,
     "height": null,
-    "url": "./media/NYiQvhvSpB94g8crZ7wM9tKjIMw.mp4",
-    "thumbUrl": "./media/NYiQvhvSpB94g8crZ7wM9tKjIMw.mp4",
+    "url": "/media/NYiQvhvSpB94g8crZ7wM9tKjIMw.mp4",
+    "thumbUrl": "/media/NYiQvhvSpB94g8crZ7wM9tKjIMw.mp4",
     "key": "NYiQvhvSpB94g8crZ7wM9tKjIMw.mp4-1771030828370"
   },
   {
@@ -523,8 +523,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/DAAiyQeJjv5na752YVEfcsnQw8.png",
-    "thumbUrl": "./media/DAAiyQeJjv5na752YVEfcsnQw8.png",
+    "url": "/media/DAAiyQeJjv5na752YVEfcsnQw8.png",
+    "thumbUrl": "/media/DAAiyQeJjv5na752YVEfcsnQw8.png",
     "key": "DAAiyQeJjv5na752YVEfcsnQw8.png-1771030828333"
   },
   {
@@ -534,8 +534,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "video",
     "width": null,
     "height": null,
-    "url": "./media/95F5GHjLWg2AV7B4ufMgwltctSw.m4v",
-    "thumbUrl": "./media/95F5GHjLWg2AV7B4ufMgwltctSw.m4v",
+    "url": "/media/95F5GHjLWg2AV7B4ufMgwltctSw.m4v",
+    "thumbUrl": "/media/95F5GHjLWg2AV7B4ufMgwltctSw.m4v",
     "key": "95F5GHjLWg2AV7B4ufMgwltctSw.m4v-1771030828304"
   },
   {
@@ -545,8 +545,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/8ll4eZW9dMcSalASqJVX15Qg8.png",
-    "thumbUrl": "./media/8ll4eZW9dMcSalASqJVX15Qg8.png",
+    "url": "/media/8ll4eZW9dMcSalASqJVX15Qg8.png",
+    "thumbUrl": "/media/8ll4eZW9dMcSalASqJVX15Qg8.png",
     "key": "8ll4eZW9dMcSalASqJVX15Qg8.png-1771030828272"
   },
   {
@@ -556,8 +556,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/8HE9te1jAoOl20KVh9ox5j2rI.png",
-    "thumbUrl": "./media/8HE9te1jAoOl20KVh9ox5j2rI.png",
+    "url": "/media/8HE9te1jAoOl20KVh9ox5j2rI.png",
+    "thumbUrl": "/media/8HE9te1jAoOl20KVh9ox5j2rI.png",
     "key": "8HE9te1jAoOl20KVh9ox5j2rI.png-1771030828247"
   },
   {
@@ -567,8 +567,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/7ChhNLZ6voJjerJDDAchGNyA0E.png",
-    "thumbUrl": "./media/7ChhNLZ6voJjerJDDAchGNyA0E.png",
+    "url": "/media/7ChhNLZ6voJjerJDDAchGNyA0E.png",
+    "thumbUrl": "/media/7ChhNLZ6voJjerJDDAchGNyA0E.png",
     "key": "7ChhNLZ6voJjerJDDAchGNyA0E.png-1771030828221"
   },
   {
@@ -578,8 +578,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/5LRaFfDhtsKnwafrEpAERwSNk0.png",
-    "thumbUrl": "./media/5LRaFfDhtsKnwafrEpAERwSNk0.png",
+    "url": "/media/5LRaFfDhtsKnwafrEpAERwSNk0.png",
+    "thumbUrl": "/media/5LRaFfDhtsKnwafrEpAERwSNk0.png",
     "key": "5LRaFfDhtsKnwafrEpAERwSNk0.png-1771030828194"
   },
   {
@@ -589,8 +589,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/5ITwGKoAyXmYoIAlca6rjJxGw.png",
-    "thumbUrl": "./media/5ITwGKoAyXmYoIAlca6rjJxGw.png",
+    "url": "/media/5ITwGKoAyXmYoIAlca6rjJxGw.png",
+    "thumbUrl": "/media/5ITwGKoAyXmYoIAlca6rjJxGw.png",
     "key": "5ITwGKoAyXmYoIAlca6rjJxGw.png-1771030828169"
   },
   {
@@ -600,8 +600,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/50RJhY5eBvdVmkksJALguKGHClA.png",
-    "thumbUrl": "./media/50RJhY5eBvdVmkksJALguKGHClA.png",
+    "url": "/media/50RJhY5eBvdVmkksJALguKGHClA.png",
+    "thumbUrl": "/media/50RJhY5eBvdVmkksJALguKGHClA.png",
     "key": "50RJhY5eBvdVmkksJALguKGHClA.png-1771030828144"
   },
   {
@@ -611,8 +611,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/0cOhzlKl3g4Em1vlVKmgF7QfkKg.png",
-    "thumbUrl": "./media/0cOhzlKl3g4Em1vlVKmgF7QfkKg.png",
+    "url": "/media/0cOhzlKl3g4Em1vlVKmgF7QfkKg.png",
+    "thumbUrl": "/media/0cOhzlKl3g4Em1vlVKmgF7QfkKg.png",
     "key": "0cOhzlKl3g4Em1vlVKmgF7QfkKg.png-1771030828117"
   },
   {
@@ -622,8 +622,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/1.png",
-    "thumbUrl": "./media/1.png",
+    "url": "/media/1.png",
+    "thumbUrl": "/media/1.png",
     "key": "1.png-1770856679094"
   },
   {
@@ -633,8 +633,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/2.png",
-    "thumbUrl": "./media/2.png",
+    "url": "/media/2.png",
+    "thumbUrl": "/media/2.png",
     "key": "2.png-1770856664603"
   },
   {
@@ -644,8 +644,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/otherside.jpeg",
-    "thumbUrl": "./media/otherside.jpeg",
+    "url": "/media/otherside.jpeg",
+    "thumbUrl": "/media/otherside.jpeg",
     "key": "otherside.jpeg-1770673547933"
   },
   {
@@ -655,8 +655,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/open.jpeg",
-    "thumbUrl": "./media/open.jpeg",
+    "url": "/media/open.jpeg",
+    "thumbUrl": "/media/open.jpeg",
     "key": "open.jpeg-1770673494702"
   },
   {
@@ -666,8 +666,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/front.jpeg",
-    "thumbUrl": "./media/front.jpeg",
+    "url": "/media/front.jpeg",
+    "thumbUrl": "/media/front.jpeg",
     "key": "front.jpeg-1770673414662"
   },
   {
@@ -677,8 +677,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/Generated%20Image%20February%2004%2C%202026%20-%206_50PM.jpeg",
-    "thumbUrl": "./media/Generated%20Image%20February%2004%2C%202026%20-%206_50PM.jpeg",
+    "url": "/media/Generated%20Image%20February%2004%2C%202026%20-%206_50PM.jpeg",
+    "thumbUrl": "/media/Generated%20Image%20February%2004%2C%202026%20-%206_50PM.jpeg",
     "key": "Generated Image February 04, 2026 - 6_50PM.jpeg-1770249080656"
   },
   {
@@ -688,8 +688,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/Generated%20Image%20February%2004%2C%202026%20-%206_46PM%20(1).jpeg",
-    "thumbUrl": "./media/Generated%20Image%20February%2004%2C%202026%20-%206_46PM%20(1).jpeg",
+    "url": "/media/Generated%20Image%20February%2004%2C%202026%20-%206_46PM%20(1).jpeg",
+    "thumbUrl": "/media/Generated%20Image%20February%2004%2C%202026%20-%206_46PM%20(1).jpeg",
     "key": "Generated Image February 04, 2026 - 6_46PM (1).jpeg-1770248807195"
   },
   {
@@ -699,8 +699,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/Generated%20Image%20January%2029%2C%202026%20-%208_36PM.jpeg",
-    "thumbUrl": "./media/Generated%20Image%20January%2029%2C%202026%20-%208_36PM.jpeg",
+    "url": "/media/Generated%20Image%20January%2029%2C%202026%20-%208_36PM.jpeg",
+    "thumbUrl": "/media/Generated%20Image%20January%2029%2C%202026%20-%208_36PM.jpeg",
     "key": "Generated Image January 29, 2026 - 8_36PM.jpeg-1769736968820"
   },
   {
@@ -710,8 +710,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/Generated%20Image%20January%2011%2C%202026%20-%209_25PM.jpeg",
-    "thumbUrl": "./media/Generated%20Image%20January%2011%2C%202026%20-%209_25PM.jpeg",
+    "url": "/media/Generated%20Image%20January%2011%2C%202026%20-%209_25PM.jpeg",
+    "thumbUrl": "/media/Generated%20Image%20January%2011%2C%202026%20-%209_25PM.jpeg",
     "key": "Generated Image January 11, 2026 - 9_25PM.jpeg-1768184729725"
   },
   {
@@ -721,8 +721,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/Generated%20Image%20January%2006%2C%202026%20-%2012_58AM.jpeg",
-    "thumbUrl": "./media/Generated%20Image%20January%2006%2C%202026%20-%2012_58AM.jpeg",
+    "url": "/media/Generated%20Image%20January%2006%2C%202026%20-%2012_58AM.jpeg",
+    "thumbUrl": "/media/Generated%20Image%20January%2006%2C%202026%20-%2012_58AM.jpeg",
     "key": "Generated Image January 06, 2026 - 12_58AM.jpeg-1767679105762"
   },
   {
@@ -732,8 +732,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/Generated%20Image%20December%2007%2C%202025%20-%204_33PM.jpeg",
-    "thumbUrl": "./media/Generated%20Image%20December%2007%2C%202025%20-%204_33PM.jpeg",
+    "url": "/media/Generated%20Image%20December%2007%2C%202025%20-%204_33PM.jpeg",
+    "thumbUrl": "/media/Generated%20Image%20December%2007%2C%202025%20-%204_33PM.jpeg",
     "key": "Generated Image December 07, 2025 - 4_33PM.jpeg-1765143237247"
   },
   {
@@ -743,8 +743,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/RaviOntheMoon.png",
-    "thumbUrl": "./media/RaviOntheMoon.png",
+    "url": "/media/RaviOntheMoon.png",
+    "thumbUrl": "/media/RaviOntheMoon.png",
     "key": "RaviOntheMoon.png-1764687873934"
   },
   {
@@ -754,8 +754,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/RaviPuffer.png",
-    "thumbUrl": "./media/RaviPuffer.png",
+    "url": "/media/RaviPuffer.png",
+    "thumbUrl": "/media/RaviPuffer.png",
     "key": "RaviPuffer.png-1763865315717"
   },
   {
@@ -765,8 +765,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/woodravi.png",
-    "thumbUrl": "./media/woodravi.png",
+    "url": "/media/woodravi.png",
+    "thumbUrl": "/media/woodravi.png",
     "key": "woodravi.png-1757823334922"
   },
   {
@@ -776,8 +776,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/rockslide%20bottom.png",
-    "thumbUrl": "./media/rockslide%20bottom.png",
+    "url": "/media/rockslide%20bottom.png",
+    "thumbUrl": "/media/rockslide%20bottom.png",
     "key": "rockslide bottom.png-1749143827647"
   },
   {
@@ -787,8 +787,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/rock4.png",
-    "thumbUrl": "./media/rock4.png",
+    "url": "/media/rock4.png",
+    "thumbUrl": "/media/rock4.png",
     "key": "rock4.png-1749138153806"
   },
   {
@@ -798,8 +798,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/framer%20preview.png",
-    "thumbUrl": "./media/framer%20preview.png",
+    "url": "/media/framer%20preview.png",
+    "thumbUrl": "/media/framer%20preview.png",
     "key": "framer preview.png-1745948382745"
   },
   {
@@ -809,8 +809,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/wonders.png",
-    "thumbUrl": "./media/wonders.png",
+    "url": "/media/wonders.png",
+    "thumbUrl": "/media/wonders.png",
     "key": "wonders.png-1743319955398"
   },
   {
@@ -820,8 +820,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/2024-10-15%2013-59.png",
-    "thumbUrl": "./media/2024-10-15%2013-59.png",
+    "url": "/media/2024-10-15%2013-59.png",
+    "thumbUrl": "/media/2024-10-15%2013-59.png",
     "key": "2024-10-15 13-59.png-1729015474785"
   },
   {
@@ -831,8 +831,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/Shot%201.png",
-    "thumbUrl": "./media/Shot%201.png",
+    "url": "/media/Shot%201.png",
+    "thumbUrl": "/media/Shot%201.png",
     "key": "Shot 1.png-1721025240000"
   },
   {
@@ -842,8 +842,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/Two%20skis.png",
-    "thumbUrl": "./media/Two%20skis.png",
+    "url": "/media/Two%20skis.png",
+    "thumbUrl": "/media/Two%20skis.png",
     "key": "Two skis.png-1721025240000"
   },
   {
@@ -853,8 +853,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/iphonecloserpng.png",
-    "thumbUrl": "./media/iphonecloserpng.png",
+    "url": "/media/iphonecloserpng.png",
+    "thumbUrl": "/media/iphonecloserpng.png",
     "key": "iphonecloserpng.png-1721025240000"
   },
   {
@@ -864,8 +864,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/oxa3web.png",
-    "thumbUrl": "./media/oxa3web.png",
+    "url": "/media/oxa3web.png",
+    "thumbUrl": "/media/oxa3web.png",
     "key": "oxa3web.png-1714371526395"
   },
   {
@@ -875,8 +875,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/Bus%20Ad.png",
-    "thumbUrl": "./media/Bus%20Ad.png",
+    "url": "/media/Bus%20Ad.png",
+    "thumbUrl": "/media/Bus%20Ad.png",
     "key": "Bus Ad.png-1714334857009"
   },
   {
@@ -886,8 +886,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/Full%20Shot.png",
-    "thumbUrl": "./media/Full%20Shot.png",
+    "url": "/media/Full%20Shot.png",
+    "thumbUrl": "/media/Full%20Shot.png",
     "key": "Full Shot.png-1714245131553"
   },
   {
@@ -897,8 +897,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/Cards%20and%20Packs.png",
-    "thumbUrl": "./media/Cards%20and%20Packs.png",
+    "url": "/media/Cards%20and%20Packs.png",
+    "thumbUrl": "/media/Cards%20and%20Packs.png",
     "key": "Cards and Packs.png-1714244975208"
   },
   {
@@ -908,8 +908,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/Cards.png",
-    "thumbUrl": "./media/Cards.png",
+    "url": "/media/Cards.png",
+    "thumbUrl": "/media/Cards.png",
     "key": "Cards.png-1714244808374"
   },
   {
@@ -919,8 +919,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/Peakinsta2.png",
-    "thumbUrl": "./media/Peakinsta2.png",
+    "url": "/media/Peakinsta2.png",
+    "thumbUrl": "/media/Peakinsta2.png",
     "key": "Peakinsta2.png-1713818755301"
   },
   {
@@ -930,8 +930,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/peakinsta.png",
-    "thumbUrl": "./media/peakinsta.png",
+    "url": "/media/peakinsta.png",
+    "thumbUrl": "/media/peakinsta.png",
     "key": "peakinsta.png-1713818572489"
   },
   {
@@ -941,8 +941,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/peakport.png",
-    "thumbUrl": "./media/peakport.png",
+    "url": "/media/peakport.png",
+    "thumbUrl": "/media/peakport.png",
     "key": "peakport.png-1713771294766"
   },
   {
@@ -952,8 +952,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/IMG_7497.jpeg",
-    "thumbUrl": "./media/IMG_7497.jpeg",
+    "url": "/media/IMG_7497.jpeg",
+    "thumbUrl": "/media/IMG_7497.jpeg",
     "key": "IMG_7497.jpeg-1713390883901"
   },
   {
@@ -963,8 +963,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/Process.png",
-    "thumbUrl": "./media/Process.png",
+    "url": "/media/Process.png",
+    "thumbUrl": "/media/Process.png",
     "key": "Process.png-1713379453035"
   },
   {
@@ -974,8 +974,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/Normal.png",
-    "thumbUrl": "./media/Normal.png",
+    "url": "/media/Normal.png",
+    "thumbUrl": "/media/Normal.png",
     "key": "Normal.png-1713379439703"
   },
   {
@@ -985,8 +985,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/Riso.png",
-    "thumbUrl": "./media/Riso.png",
+    "url": "/media/Riso.png",
+    "thumbUrl": "/media/Riso.png",
     "key": "Riso.png-1713379410389"
   },
   {
@@ -996,8 +996,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/Render%203.png",
-    "thumbUrl": "./media/Render%203.png",
+    "url": "/media/Render%203.png",
+    "thumbUrl": "/media/Render%203.png",
     "key": "Render 3.png-1713374435859"
   },
   {
@@ -1007,8 +1007,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/Render%202.png",
-    "thumbUrl": "./media/Render%202.png",
+    "url": "/media/Render%202.png",
+    "thumbUrl": "/media/Render%202.png",
     "key": "Render 2.png-1713329610889"
   },
   {
@@ -1018,8 +1018,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/All%203.png",
-    "thumbUrl": "./media/All%203.png",
+    "url": "/media/All%203.png",
+    "thumbUrl": "/media/All%203.png",
     "key": "All 3.png-1713032375323"
   },
   {
@@ -1029,8 +1029,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/Treasure%20Map%20Horizontal.png",
-    "thumbUrl": "./media/Treasure%20Map%20Horizontal.png",
+    "url": "/media/Treasure%20Map%20Horizontal.png",
+    "thumbUrl": "/media/Treasure%20Map%20Horizontal.png",
     "key": "Treasure Map Horizontal.png-1709830644169"
   },
   {
@@ -1040,8 +1040,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/IMG_4448.jpg",
-    "thumbUrl": "./media/IMG_4448.jpg",
+    "url": "/media/IMG_4448.jpg",
+    "thumbUrl": "/media/IMG_4448.jpg",
     "key": "IMG_4448.jpg-1706937548000"
   },
   {
@@ -1051,8 +1051,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/IMG_4447.jpg",
-    "thumbUrl": "./media/IMG_4447.jpg",
+    "url": "/media/IMG_4447.jpg",
+    "thumbUrl": "/media/IMG_4447.jpg",
     "key": "IMG_4447.jpg-1706937544000"
   },
   {
@@ -1062,8 +1062,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/IMG_4438.jpg",
-    "thumbUrl": "./media/IMG_4438.jpg",
+    "url": "/media/IMG_4438.jpg",
+    "thumbUrl": "/media/IMG_4438.jpg",
     "key": "IMG_4438.jpg-1706937153000"
   },
   {
@@ -1073,8 +1073,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/IMG_4437.jpg",
-    "thumbUrl": "./media/IMG_4437.jpg",
+    "url": "/media/IMG_4437.jpg",
+    "thumbUrl": "/media/IMG_4437.jpg",
     "key": "IMG_4437.jpg-1706937145000"
   },
   {
@@ -1084,8 +1084,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/IMG_4436.jpg",
-    "thumbUrl": "./media/IMG_4436.jpg",
+    "url": "/media/IMG_4436.jpg",
+    "thumbUrl": "/media/IMG_4436.jpg",
     "key": "IMG_4436.jpg-1706937135000"
   },
   {
@@ -1095,8 +1095,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/IMG_4433.jpg",
-    "thumbUrl": "./media/IMG_4433.jpg",
+    "url": "/media/IMG_4433.jpg",
+    "thumbUrl": "/media/IMG_4433.jpg",
     "key": "IMG_4433.jpg-1706936512000"
   },
   {
@@ -1106,8 +1106,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/IMG_4432.jpg",
-    "thumbUrl": "./media/IMG_4432.jpg",
+    "url": "/media/IMG_4432.jpg",
+    "thumbUrl": "/media/IMG_4432.jpg",
     "key": "IMG_4432.jpg-1706936508000"
   },
   {
@@ -1117,8 +1117,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/IMG_4431.jpg",
-    "thumbUrl": "./media/IMG_4431.jpg",
+    "url": "/media/IMG_4431.jpg",
+    "thumbUrl": "/media/IMG_4431.jpg",
     "key": "IMG_4431.jpg-1706936503000"
   },
   {
@@ -1128,8 +1128,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/IMG_4421.jpg",
-    "thumbUrl": "./media/IMG_4421.jpg",
+    "url": "/media/IMG_4421.jpg",
+    "thumbUrl": "/media/IMG_4421.jpg",
     "key": "IMG_4421.jpg-1706922440000"
   },
   {
@@ -1139,8 +1139,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/IMG_4420.jpg",
-    "thumbUrl": "./media/IMG_4420.jpg",
+    "url": "/media/IMG_4420.jpg",
+    "thumbUrl": "/media/IMG_4420.jpg",
     "key": "IMG_4420.jpg-1706922406000"
   },
   {
@@ -1150,8 +1150,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/IMG_4419.jpg",
-    "thumbUrl": "./media/IMG_4419.jpg",
+    "url": "/media/IMG_4419.jpg",
+    "thumbUrl": "/media/IMG_4419.jpg",
     "key": "IMG_4419.jpg-1706922402000"
   },
   {
@@ -1161,8 +1161,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/IMG_4418.jpg",
-    "thumbUrl": "./media/IMG_4418.jpg",
+    "url": "/media/IMG_4418.jpg",
+    "thumbUrl": "/media/IMG_4418.jpg",
     "key": "IMG_4418.jpg-1706922391000"
   },
   {
@@ -1172,8 +1172,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/IMG_4416.jpg",
-    "thumbUrl": "./media/IMG_4416.jpg",
+    "url": "/media/IMG_4416.jpg",
+    "thumbUrl": "/media/IMG_4416.jpg",
     "key": "IMG_4416.jpg-1706922317000"
   },
   {
@@ -1183,8 +1183,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/IMG_4415.jpg",
-    "thumbUrl": "./media/IMG_4415.jpg",
+    "url": "/media/IMG_4415.jpg",
+    "thumbUrl": "/media/IMG_4415.jpg",
     "key": "IMG_4415.jpg-1706922308000"
   },
   {
@@ -1194,8 +1194,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/IMG_4414.jpg",
-    "thumbUrl": "./media/IMG_4414.jpg",
+    "url": "/media/IMG_4414.jpg",
+    "thumbUrl": "/media/IMG_4414.jpg",
     "key": "IMG_4414.jpg-1706922301000"
   },
   {
@@ -1205,8 +1205,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/IMG_4413.jpg",
-    "thumbUrl": "./media/IMG_4413.jpg",
+    "url": "/media/IMG_4413.jpg",
+    "thumbUrl": "/media/IMG_4413.jpg",
     "key": "IMG_4413.jpg-1706922287000"
   },
   {
@@ -1216,8 +1216,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/IMG_4412.jpg",
-    "thumbUrl": "./media/IMG_4412.jpg",
+    "url": "/media/IMG_4412.jpg",
+    "thumbUrl": "/media/IMG_4412.jpg",
     "key": "IMG_4412.jpg-1706922251000"
   },
   {
@@ -1227,8 +1227,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/IMG_4411.jpg",
-    "thumbUrl": "./media/IMG_4411.jpg",
+    "url": "/media/IMG_4411.jpg",
+    "thumbUrl": "/media/IMG_4411.jpg",
     "key": "IMG_4411.jpg-1706922244000"
   },
   {
@@ -1238,8 +1238,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "video",
     "width": null,
     "height": null,
-    "url": "./media/Nestquest%20Commercial.mp4",
-    "thumbUrl": "./media/Nestquest%20Commercial.mp4",
+    "url": "/media/Nestquest%20Commercial.mp4",
+    "thumbUrl": "/media/Nestquest%20Commercial.mp4",
     "key": "Nestquest Commercial.mp4-1702388455508"
   },
   {
@@ -1249,8 +1249,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/IMG_3937.JPG",
-    "thumbUrl": "./media/IMG_3937.JPG",
+    "url": "/media/IMG_3937.JPG",
+    "thumbUrl": "/media/IMG_3937.JPG",
     "key": "IMG_3937.JPG-1701991838000"
   },
   {
@@ -1260,8 +1260,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/IMG_3507.JPG",
-    "thumbUrl": "./media/IMG_3507.JPG",
+    "url": "/media/IMG_3507.JPG",
+    "thumbUrl": "/media/IMG_3507.JPG",
     "key": "IMG_3507.JPG-1696897491000"
   },
   {
@@ -1271,8 +1271,8 @@ window.NM_MEDIA_INDEX = [
     "mediaType": "image",
     "width": null,
     "height": null,
-    "url": "./media/IMG_7492.JPG",
-    "thumbUrl": "./media/IMG_7492.JPG",
+    "url": "/media/IMG_7492.JPG",
+    "thumbUrl": "/media/IMG_7492.JPG",
     "key": "IMG_7492.JPG-1653255484130"
   }
 ];
