@@ -586,7 +586,6 @@ a {
   line-height: 1.04;
   letter-spacing: -0.02em;
   font-weight: 700;
-  text-transform: uppercase;
 }
 
 .resume-lab-note {
@@ -609,8 +608,7 @@ a {
   color: #f0f1f6;
   font-size: 20px;
   line-height: 1.05;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  letter-spacing: 0.02em;
   font-weight: 700;
   border: 1px solid #252936;
   background: #11151f;

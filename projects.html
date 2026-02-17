@@ -86,16 +86,10 @@
       }
 
       .section-title {
-        margin: 40px 0 8px;
+        margin: 0 0 8px;
         color: #ababb4;
         font-size: 16px;
         font-weight: 500;
-        border-top: 1px solid var(--line-soft);
-        padding-top: 8px;
-      }
-
-      .section-title:first-of-type {
-        margin-top: 0;
       }
     </style>
   </head>
@@ -127,7 +121,11 @@
           </p>
         </section>
 
-        <h2 class="section-title">Main Projects</h2>
+        <section class="channel-meta" aria-label="Projects">
+          <article class="meta-col">
+            <h2 class="section-title">Main Projects</h2>
+          </article>
+        </section>
         <section class="projects-board" id="mainProjects" aria-label="Main projects">
           <!-- Boreal -->
           <article class="project-card">
@@ -211,7 +209,11 @@
           </article>
         </section>
 
-        <h2 class="section-title">Other Work</h2>
+        <section class="channel-meta" aria-label="Other work" style="margin-top: 40px;">
+          <article class="meta-col">
+            <h2 class="section-title">Other Work</h2>
+          </article>
+        </section>
         <section class="projects-board" id="otherProjects" aria-label="Other projects">
           <!-- 3D Print -->
           <article class="project-card">
