@@ -4,26 +4,42 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nestquest | Nico Maggioli</title>
-    <meta name="description" content="Nestquest project by Nico Maggioli — creative strategy, visual identity, and 3D-driven systems." />
-    <meta property="og:image" content="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />
     <link rel="icon" type="image/png" sizes="32x32" href="./nm_fav.png" />
     <link rel="stylesheet" href="./styles.css" />
     <style>
-      .project-detail { max-width: 1400px; margin: 0 auto; padding: 0 24px 80px; }
-      .project-hero { width: 100%; margin: 30px 0 40px; background: var(--card-bg); border: 1px solid var(--line); }
-      .project-hero img { width: 100%; height: auto; display: block; }
-      .project-info { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-bottom: 60px; }
+      .project-detail { max-width: 1400px; margin: 0 auto; padding: 40px 24px 80px; }
+      .project-info { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-bottom: 60px; padding-top: 20px; }
       @media (max-width: 768px) { .project-info { grid-template-columns: 1fr; gap: 30px; } }
       .project-title { font-size: 42px; font-weight: 600; margin: 0 0 20px; color: var(--text); letter-spacing: -0.02em; }
       .project-description { font-size: 16px; line-height: 1.7; color: var(--muted); margin: 0; }
       .project-meta { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
       .meta-item dt { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted-2); margin-bottom: 6px; }
       .meta-item dd { font-size: 15px; color: var(--text); margin: 0; }
+      .section-divider { height: 1px; background: var(--line); margin: 0 0 40px; }
+      .gallery-title { font-size: 14px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted-2); margin: 0 0 24px; }
       .project-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-bottom: 60px; }
       @media (max-width: 940px) { .project-gallery { grid-template-columns: repeat(2, 1fr); } }
-      .gallery-item { aspect-ratio: 1 / 1; background: var(--card-bg); border: 1px solid var(--line); overflow: hidden; }
-      .gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 200ms ease; }
-      .gallery-item:hover img { transform: scale(1.03); }
+      
+      .gallery-item {
+        aspect-ratio: 1 / 1;
+        background: var(--card-bg);
+        border: 1px solid var(--line);
+        overflow: hidden;
+        cursor: pointer;
+        transform-style: preserve-3d;
+        transform: perspective(900px) rotateX(var(--pin-rx, 0deg)) rotateY(var(--pin-ry, 0deg)) scale(var(--pin-scale, 1));
+        transition: transform 140ms ease, box-shadow 140ms ease;
+        will-change: transform;
+      }
+      .gallery-item:hover { box-shadow: 0 0 0 1px rgba(150, 156, 178, 0.34); }
+      .gallery-item img, .gallery-item video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        pointer-events: none;
+      }
+      
       .project-nav { display: flex; justify-content: space-between; align-items: center; padding: 30px 0; border-top: 1px solid var(--line); }
       .nav-links { display: flex; gap: 40px; }
       .nav-link { display: flex; flex-direction: column; text-decoration: none; color: var(--text); transition: color 150ms ease; }
@@ -32,8 +48,6 @@
       .nav-link strong { font-size: 16px; font-weight: 500; }
       .back-link { padding: 12px 24px; background: var(--chip); color: var(--text); text-decoration: none; font-size: 14px; font-weight: 500; transition: background 150ms ease; border: 1px solid var(--line); }
       .back-link:hover { background: var(--chip-hover); }
-      .section-divider { height: 1px; background: var(--line); margin: 0 0 40px; }
-      .gallery-title { font-size: 14px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted-2); margin: 0 0 24px; }
     </style>
   </head>
   <body>
@@ -54,8 +68,6 @@
       </header>
 
       <main class="page-shell project-detail">
-        <div class="project-hero"><img src="./media/nestquest/hero.png" alt="Nestquest" loading="eager" /></div>
-        
         <div class="project-info">
           <div>
             <h1 class="project-title">Nestquest</h1>
@@ -73,12 +85,17 @@
         <h2 class="gallery-title">Project Gallery</h2>
 
         <div class="project-gallery">
-          <div class="gallery-item"><img src="./media/nestquest/1.png" alt="Nestquest 1" loading="lazy" /></div>
-          <div class="gallery-item"><img src="./media/nestquest/2.png" alt="Nestquest 2" loading="lazy" /></div>
-          <div class="gallery-item"><img src="./media/nestquest/3.png" alt="Nestquest 3" loading="lazy" /></div>
-          <div class="gallery-item"><img src="./media/nestquest/4.png" alt="Nestquest 4" loading="lazy" /></div>
-          <div class="gallery-item"><img src="./media/nestquest/10.png" alt="Nestquest 5" loading="lazy" /></div>
-          <div class="gallery-item"><img src="./media/nestquest/11.jpg" alt="Nestquest 6" loading="lazy" /></div>
+          <div class="gallery-item" data-tilt><img src="./media/nestquest/1.png" alt="Nestquest 1" loading="lazy" /></div>
+          <div class="gallery-item" data-tilt><img src="./media/nestquest/2.png" alt="Nestquest 2" loading="lazy" /></div>
+          <div class="gallery-item" data-tilt><img src="./media/nestquest/3.png" alt="Nestquest 3" loading="lazy" /></div>
+          <div class="gallery-item" data-tilt><img src="./media/nestquest/4.png" alt="Nestquest 4" loading="lazy" /></div>
+          <div class="gallery-item" data-tilt><img src="./media/nestquest/10.png" alt="Nestquest 5" loading="lazy" /></div>
+          <div class="gallery-item" data-tilt><img src="./media/nestquest/11.jpg" alt="Nestquest 6" loading="lazy" /></div>
+          <div class="gallery-item" data-tilt>
+            <video autoplay muted loop playsinline>
+              <source src="./media/nestquest/19.mp4" type="video/mp4">
+            </video>
+          </div>
         </div>
 
         <nav class="project-nav">
@@ -88,5 +105,40 @@
         </nav>
       </main>
     </div>
+
+    <script>
+      const CARD_TILT_MAX_DEGREES = 7;
+      const HAS_FINE_POINTER = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+      function setupCardTilt(element) {
+        if (!HAS_FINE_POINTER || !element) return;
+        let animationFrameId = 0, nextRotateX = 0, nextRotateY = 0;
+        const commit = () => {
+          animationFrameId = 0;
+          element.style.setProperty('--pin-rx', `${nextRotateX.toFixed(2)}deg`);
+          element.style.setProperty('--pin-ry', `${nextRotateY.toFixed(2)}deg`);
+          element.style.setProperty('--pin-scale', '1.02');
+        };
+        element.addEventListener('pointermove', (event) => {
+          const rect = element.getBoundingClientRect();
+          if (!rect.width || !rect.height) return;
+          const xRatio = (event.clientX - rect.left) / rect.width;
+          const yRatio = (event.clientY - rect.top) / rect.height;
+          nextRotateY = (xRatio - 0.5) * CARD_TILT_MAX_DEGREES * 2;
+          nextRotateX = (0.5 - yRatio) * CARD_TILT_MAX_DEGREES * 2;
+          if (!animationFrameId) animationFrameId = window.requestAnimationFrame(commit);
+        });
+        const resetTilt = () => {
+          if (animationFrameId) { window.cancelAnimationFrame(animationFrameId); animationFrameId = 0; }
+          element.style.setProperty('--pin-rx', '0deg');
+          element.style.setProperty('--pin-ry', '0deg');
+          element.style.setProperty('--pin-scale', '1');
+        };
+        element.addEventListener('pointerleave', resetTilt);
+        element.addEventListener('pointercancel', resetTilt);
+        element.addEventListener('pointerdown', () => element.style.setProperty('--pin-scale', '1.01'));
+        element.addEventListener('pointerup', () => element.style.setProperty('--pin-scale', '1.02'));
+      }
+      document.querySelectorAll('.gallery-item[data-tilt]').forEach(setupCardTilt);
+    </script>
   </body>
 </html>
