@@ -11,7 +11,6 @@
       @media (max-width: 1400px) { .project-detail { padding: 40px 32px 64px; } }
       @media (max-width: 640px) { .project-detail { padding: 20px 16px 40px; } }
       
-      
       .project-info { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin: 30px 0 60px; }
       @media (max-width: 768px) { .project-info { grid-template-columns: 1fr; gap: 30px; } }
       .project-title { font-size: 42px; font-weight: 600; margin: 0 0 20px; color: var(--text); letter-spacing: -0.02em; }
@@ -22,11 +21,78 @@
       .section-divider { height: 1px; background: var(--line); margin: 0 0 40px; }
       .gallery-title { font-size: 14px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted-2); margin: 0 0 24px; }
       
-      /* Masonry Gallery - same as work page */
+      /* Content Sections with Images */
+      .content-block {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+        margin: 80px 0;
+      }
+      @media (max-width: 968px) { 
+        .content-block { 
+          grid-template-columns: 1fr; 
+          gap: 40px;
+          margin: 60px 0;
+        }
+        .content-block.reverse .content-text { order: 2; }
+        .content-block.reverse .content-image { order: 1; }
+      }
+      
+      .content-text h3 { 
+        font-size: 13px; 
+        text-transform: uppercase; 
+        letter-spacing: 2px; 
+        color: var(--accent); 
+        margin-bottom: 20px;
+        font-weight: 600;
+      }
+      .content-text h2 {
+        font-size: 32px;
+        font-weight: 600;
+        margin: 0 0 24px;
+        color: var(--text);
+        letter-spacing: -0.02em;
+        line-height: 1.2;
+      }
+      .content-text p { 
+        color: var(--muted); 
+        line-height: 1.8; 
+        font-size: 16px;
+        margin: 0 0 16px;
+      }
+      
+      .content-image {
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+        border: 1px solid var(--line);
+      }
+      .content-image img,
+      .content-image video {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+      
+      /* Full-width sections */
+      .content-block.full-width {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .content-block.full-width .content-text {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .content-block.full-width .content-image {
+        margin-top: 40px;
+      }
+      
+      /* Gallery at bottom */
       .project-gallery { 
         column-count: 4; 
         column-gap: 18px; 
-        margin-bottom: 60px; 
+        margin: 60px 0; 
       }
       @media (max-width: 1200px) { .project-gallery { column-count: 3; } }
       @media (max-width: 940px) { .project-gallery { column-count: 2; } }
@@ -47,6 +113,16 @@
       .gallery-item:hover { box-shadow: 0 0 0 1px rgba(150, 156, 178, 0.34); }
       .gallery-item img, .gallery-item video { width: 100%; height: auto; display: block; pointer-events: none; }
       
+      /* Featured image */
+      .hero-image {
+        width: 100%;
+        max-height: 70vh;
+        object-fit: cover;
+        border-radius: 12px;
+        margin: 40px 0 60px;
+        border: 1px solid var(--line);
+      }
+      
       .project-nav { display: flex; justify-content: space-between; align-items: center; padding: 30px 0; border-top: 1px solid var(--line); }
       .nav-links { display: flex; gap: 40px; }
       .nav-link { display: flex; flex-direction: column; text-decoration: none; color: var(--text); transition: color 150ms ease; }
@@ -56,23 +132,7 @@
       .back-link { padding: 12px 24px; background: var(--chip); color: var(--text); text-decoration: none; font-size: 14px; font-weight: 500; transition: background 150ms ease; border: 1px solid var(--line); }
       .back-link:hover { background: var(--chip-hover); }
     </style>
-  
-<style>
-.content-section { margin: 40px 0; }
-.content-section h3 { 
-    font-size: 14px; 
-    text-transform: uppercase; 
-    letter-spacing: 1px; 
-    color: var(--accent); 
-    margin-bottom: 16px; 
-}
-.content-section p { 
-    color: var(--muted); 
-    line-height: 1.8; 
-    font-size: 15px;
-}
-</style>
-</head>
+  </head>
   <body>
     <div class="app-shell">
       <header class="topbar">
@@ -93,33 +153,94 @@
       <main class="project-detail">
         <section class="channel-head">
           <div class="project-info">
-          <div>
-            <h1 class="project-title">Nestquest</h1>
-            <p class="project-description">Nestquest is all about using technology to pull kids away from endless screen time and into the great outdoors. Kids use advanced image recognition binoculars that instantly identify different bird species, making nature exploration fun, interactive, and educational.</p>
-        <div class="project-details">
-<div class="content-section"><h3>Concept</h3><p>Nestquest is all about using technology to pull kids away from endless screen time and into the great outdoors. I noticed that many kids are glued to their iPads and social media, so I wanted to flip the script and turn tech into a tool for exploration. With Nestquest, kids use advanced image recognition binoculars that instantly identify different bird species, making nature exploration fun, interactive, and educational.</p></div>
-<div class="content-section"><h3>Creative Strategy</h3><p>The creative strategy was to push this idea of new technology that hasn't been seen before with the familiar feeling of collecting trading cards with your friends. I aimed to blend the thrill of discovering birds with a learning experience that not only sharpens their intellect but also offers a refreshing break from brain rotting on a screen, encouraging kids to truly engage with nature.</p></div>
-<div class="content-section"><h3>The Card Game</h3><p>Cool binoculars alone weren't enough to fully engage the kids, so a card game was introduced to make Nestquest even more interactive and exciting. The idea was to give kids a tangible reward for their discoveries, turning birdwatching into a fun, competitive experience. By collecting and trading cards, they stay hooked and motivated to explore, learn more about the birds they spot, and share their findings with friends. The card game adds an element of surprise and achievement, making nature exploration more than just looking—it's about collecting, trading, and learning.</p></div>
-<div class="content-section"><h3>Advertising</h3><p>For the Nestquest ad campaign, my goal was to make it fun, vibrant, and exciting to catch the attention of kids, ensuring that every element, from the visuals to the interactive components, sparks their curiosity and encourages them to explore and learn.</p></div>
-        </div>
+            <div>
+              <h1 class="project-title">Nestquest</h1>
+              <p class="project-description">Nestquest is all about using technology to pull kids away from endless screen time and into the great outdoors. Kids use advanced image recognition binoculars that instantly identify different bird species, making nature exploration fun, interactive, and educational.</p>
+            </div>
+            <dl class="project-meta">
+              <div class="meta-item"><dt>Year</dt><dd>2024</dd></div>
+              <div class="meta-item"><dt>Category</dt><dd>Selected Work</dd></div>
+              <div class="meta-item"><dt>Services</dt><dd>Concept, Product Design, App Design, Card Game Design, Branding</dd></div>
+              <div class="meta-item"><dt>Role</dt><dd>Creative Director</dd></div>
+            </dl>
           </div>
-          <dl class="project-meta">
-            <div class="meta-item"><dt>Year</dt><dd>2024</dd></div>
-            <div class="meta-item"><dt>Category</dt><dd>Selected Work</dd></div>
-            <div class="meta-item"><dt>Services</dt><dd>Concept, Product Design, App Design, Card Game Design, Branding</dd></div>
-            <div class="meta-item"><dt>Role</dt><dd>Creative Director</dd></div>
-          </dl>
-        </div>
         </section>
+        
+        <!-- Hero Image -->
+        <img src="./media/nestquest/sOv0ScmhL9yNXi6jRfWIdvjgtQs.png" alt="Nestquest Hero" class="hero-image" />
+        
+        <!-- Concept Section -->
+        <div class="content-block">
+          <div class="content-text">
+            <h3>Concept</h3>
+            <h2>Technology for Outdoor Exploration</h2>
+            <p>Nestquest is all about using technology to pull kids away from endless screen time and into the great outdoors. I noticed that many kids are glued to their iPads and social media, so I wanted to flip the script and turn tech into a tool for exploration.</p>
+            <p>With Nestquest, kids use advanced image recognition binoculars that instantly identify different bird species, making nature exploration fun, interactive, and educational.</p>
+          </div>
+          <div class="content-image" data-tilt>
+            <img src="./media/nestquest/1.png" alt="Nestquest Binoculars" loading="lazy" />
+          </div>
+        </div>
+        
+        <!-- Creative Strategy Section -->
+        <div class="content-block reverse">
+          <div class="content-image" data-tilt>
+            <img src="./media/nestquest/2.png" alt="Nestquest App Interface" loading="lazy" />
+          </div>
+          <div class="content-text">
+            <h3>Creative Strategy</h3>
+            <h2>New Tech, Familiar Feel</h2>
+            <p>The creative strategy was to push this idea of new technology that hasn't been seen before with the familiar feeling of collecting trading cards with your friends.</p>
+            <p>I aimed to blend the thrill of discovering birds with a learning experience that not only sharpens their intellect but also offers a refreshing break from brain rotting on a screen, encouraging kids to truly engage with nature.</p>
+          </div>
+        </div>
+        
+        <!-- The Card Game Section -->
+        <div class="content-block">
+          <div class="content-text">
+            <h3>The Card Game</h3>
+            <h2>Collect, Trade, Compete</h2>
+            <p>Cool binoculars alone weren't enough to fully engage the kids, so a card game was introduced to make Nestquest even more interactive and exciting.</p>
+            <p>The idea was to give kids a tangible reward for their discoveries, turning birdwatching into a fun, competitive experience. By collecting and trading cards, they stay hooked and motivated to explore, learn more about the birds they spot, and share their findings with friends.</p>
+            <p>The card game adds an element of surprise and achievement, making nature exploration more than just looking—it's about collecting, trading, and learning.</p>
+          </div>
+          <div class="content-image" data-tilt>
+            <img src="./media/nestquest/3KbanHgCLlicDrWgcxqIs6EcsW4.png" alt="Nestquest Cards" loading="lazy" />
+          </div>
+        </div>
+        
+        <!-- Card Collection Showcase -->
+        <div class="content-block reverse">
+          <div class="content-image" data-tilt>
+            <img src="./media/nestquest/3.png" alt="Card Collection" loading="lazy" />
+          </div>
+          <div class="content-text">
+            <h3>Card Design</h3>
+            <h2>Every Bird Tells a Story</h2>
+            <p>Each card features a beautifully illustrated bird with key information: species name, habitat, diet, and rarity level. The card backs feature the Nestquest logo with a holographic finish.</p>
+            <p>Kids can organize their collection in a custom binder, trade duplicates with friends, and compete to find the rarest species in their area.</p>
+          </div>
+        </div>
+        
+        <!-- Full Width Video Section -->
+        <div class="content-block full-width">
+          <div class="content-text">
+            <h3>Advertising</h3>
+            <h2>Campaign</h2>
+            <p>For the Nestquest ad campaign, my goal was to make it fun, vibrant, and exciting to catch the attention of kids, ensuring that every element, from the visuals to the interactive components, sparks their curiosity and encourages them to explore and learn.</p>
+          </div>
+          <div class="content-image">
+            <video autoplay muted loop playsinline>
+              <source src="./media/nestquest/19.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        
+        <!-- Additional Gallery Images -->
         <div class="section-divider"></div>
-        <h2 class="gallery-title">Project Gallery</h2>
-
+        <h2 class="gallery-title">More from the Project</h2>
+        
         <div class="project-gallery">
-                    <div class="gallery-item" data-tilt><img src="./media/nestquest/sOv0ScmhL9yNXi6jRfWIdvjgtQs.png" alt="Nestquest" loading="lazy" /></div>
-          <div class="gallery-item" data-tilt><img src="./media/nestquest/1.png" alt="Nestquest" loading="lazy" /></div>
-          <div class="gallery-item" data-tilt><img src="./media/nestquest/2.png" alt="Nestquest" loading="lazy" /></div>
-          <div class="gallery-item" data-tilt><img src="./media/nestquest/3KbanHgCLlicDrWgcxqIs6EcsW4.png" alt="Nestquest" loading="lazy" /></div>
-          <div class="gallery-item" data-tilt><img src="./media/nestquest/3.png" alt="Nestquest" loading="lazy" /></div>
           <div class="gallery-item" data-tilt><img src="./media/nestquest/Ilnyt4mxPO4iZC91zA8GgKUlmm8.png" alt="Nestquest" loading="lazy" /></div>
           <div class="gallery-item" data-tilt><img src="./media/nestquest/4.png" alt="Nestquest" loading="lazy" /></div>
           <div class="gallery-item" data-tilt><img src="./media/nestquest/5.png" alt="Nestquest" loading="lazy" /></div>
@@ -136,9 +257,7 @@
           <div class="gallery-item" data-tilt><img src="./media/nestquest/16.jpg" alt="Nestquest" loading="lazy" /></div>
           <div class="gallery-item" data-tilt><img src="./media/nestquest/17.jpg" alt="Nestquest" loading="lazy" /></div>
           <div class="gallery-item" data-tilt><img src="./media/nestquest/18.jpg" alt="Nestquest" loading="lazy" /></div>
-          <div class="gallery-item" data-tilt><video autoplay muted loop playsinline><source src="./media/nestquest/19.mp4" type="video/mp4"></video></div>
           <div class="gallery-item" data-tilt><img src="./media/nestquest/20.webp" alt="Nestquest" loading="lazy" /></div>
-
         </div>
 
         <nav class="project-nav">
@@ -168,7 +287,7 @@
         const reset = () => { if (animationFrameId) { window.cancelAnimationFrame(animationFrameId); animationFrameId = 0; } el.style.setProperty('--pin-rx', '0deg'); el.style.setProperty('--pin-ry', '0deg'); el.style.setProperty('--pin-scale', '1'); };
         el.addEventListener('pointerleave', reset); el.addEventListener('pointercancel', reset); el.addEventListener('pointerdown', () => el.style.setProperty('--pin-scale', '1.01')); el.addEventListener('pointerup', () => el.style.setProperty('--pin-scale', '1.02'));
       }
-      document.querySelectorAll('.gallery-item[data-tilt]').forEach(setupCardTilt);
+      document.querySelectorAll('[data-tilt]').forEach(setupCardTilt);
     </script>
   </body>
 </html>
