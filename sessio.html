@@ -11,7 +11,6 @@
       @media (max-width: 1400px) { .project-detail { padding: 40px 32px 64px; } }
       @media (max-width: 640px) { .project-detail { padding: 20px 16px 40px; } }
       
-      
       .project-info { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin: 30px 0 60px; }
       @media (max-width: 768px) { .project-info { grid-template-columns: 1fr; gap: 30px; } }
       .project-title { font-size: 42px; font-weight: 600; margin: 0 0 20px; color: var(--text); letter-spacing: -0.02em; }
@@ -22,11 +21,71 @@
       .section-divider { height: 1px; background: var(--line); margin: 0 0 40px; }
       .gallery-title { font-size: 14px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted-2); margin: 0 0 24px; }
       
-      /* Masonry Gallery - same as work page */
+      .content-block {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+        margin: 80px 0;
+      }
+      @media (max-width: 968px) { 
+        .content-block { 
+          grid-template-columns: 1fr; 
+          gap: 40px;
+          margin: 60px 0;
+        }
+        .content-block.reverse .content-text { order: 2; }
+        .content-block.reverse .content-image { order: 1; }
+      }
+      
+      .content-text h3 { 
+        font-size: 13px; 
+        text-transform: uppercase; 
+        letter-spacing: 2px; 
+        color: var(--accent); 
+        margin-bottom: 20px;
+        font-weight: 600;
+      }
+      .content-text h2 {
+        font-size: 32px;
+        font-weight: 600;
+        margin: 0 0 24px;
+        color: var(--text);
+        letter-spacing: -0.02em;
+        line-height: 1.2;
+      }
+      .content-text p { 
+        color: var(--muted); 
+        line-height: 1.8; 
+        font-size: 16px;
+        margin: 0 0 16px;
+      }
+      
+      .content-image {
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+        border: 1px solid var(--line);
+      }
+      .content-image img, .content-image video {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+      
+      .hero-image {
+        width: 100%;
+        max-height: 70vh;
+        object-fit: cover;
+        border-radius: 12px;
+        margin: 40px 0 60px;
+        border: 1px solid var(--line);
+      }
+      
       .project-gallery { 
         column-count: 4; 
         column-gap: 18px; 
-        margin-bottom: 60px; 
+        margin: 60px 0; 
       }
       @media (max-width: 1200px) { .project-gallery { column-count: 3; } }
       @media (max-width: 940px) { .project-gallery { column-count: 2; } }
@@ -56,23 +115,7 @@
       .back-link { padding: 12px 24px; background: var(--chip); color: var(--text); text-decoration: none; font-size: 14px; font-weight: 500; transition: background 150ms ease; border: 1px solid var(--line); }
       .back-link:hover { background: var(--chip-hover); }
     </style>
-  
-<style>
-.content-section { margin: 40px 0; }
-.content-section h3 { 
-    font-size: 14px; 
-    text-transform: uppercase; 
-    letter-spacing: 1px; 
-    color: var(--accent); 
-    margin-bottom: 16px; 
-}
-.content-section p { 
-    color: var(--muted); 
-    line-height: 1.8; 
-    font-size: 15px;
-}
-</style>
-</head>
+  </head>
   <body>
     <div class="app-shell">
       <header class="topbar">
@@ -93,33 +136,69 @@
       <main class="project-detail">
         <section class="channel-head">
           <div class="project-info">
-          <div>
-            <h1 class="project-title">Sessio</h1>
-            <p class="project-description">I wanted to push the boundaries of skateboarding and make Sessio feel like a whole new world, kind of like Disney. I modeled a frog, named Sevvy, to be the mascot of Sessio. Sevvy represents that playful, rebellious spirit that skateboarding is all about.</p>
-        <div class="project-details">
-<div class="content-section"><h3>Concept</h3><p>Sessio is a revolutionary skatepark concept that pushes the limits of what's expected. Skateboarders thrive on doing the unexpected, skating where they're not supposed to, taking risks, and standing out. That's why traditional skateparks often feel tame and uninspiring. With Sessio, I set out to redefine the skatepark by drawing inspiration from the wonders of the world, places that feel so exclusive and off-limits.</p></div>
-<div class="content-section"><h3>Creative Strategy</h3><p>I wanted to push the boundaries of skateboarding and make Sessio feel like a whole new world, kind of like Disney. I modeled a frog, named Sevvy, to be the mascot of Sessio. Sevvy represents that playful, rebellious spirit that skateboarding is all about, guiding riders into a realm where the rules are rewritten. The strategy was to blend wonder with a touch of the forbidden, creating an experience that turns every skate session into an epic adventure.</p></div>
-<div class="content-section"><h3>Advertising</h3><p>For the ad campaign, I wanted to push this idea of Sevvy traveling all over, skating the different wonders while making it look like something themepark related. I envisioned bold, vibrant visuals of Sevvy tackling iconic, off-limits skate spots that feel like epic rides, inviting skaters into a world of adventure. The campaign captures that rebellious, fun spirit of skateboarding and transforms each ride into a journey where every corner of the map is a new, exhilarating attraction.</p></div>
-<div class="content-section"><h3>Process</h3><p>Here's some of the process that went in to creating Sessio</p></div>
-        </div>
+            <div>
+              <h1 class="project-title">Sessio</h1>
+              <p class="project-description">I wanted to push the boundaries of skateboarding and make Sessio feel like a whole new world, kind of like Disney. I modeled a frog, named Sevvy, to be the mascot of Sessio. Sevvy represents that playful, rebellious spirit that skateboarding is all about.</p>
+            </div>
+            <dl class="project-meta">
+              <div class="meta-item"><dt>Year</dt><dd>2024</dd></div>
+              <div class="meta-item"><dt>Category</dt><dd>Selected Work</dd></div>
+              <div class="meta-item"><dt>Services</dt><dd>Concept, 3D Modeling, Character Design, Branding, Advertising</dd></div>
+              <div class="meta-item"><dt>Role</dt><dd>Creative Director</dd></div>
+            </dl>
           </div>
-          <dl class="project-meta">
-            <div class="meta-item"><dt>Year</dt><dd>2024</dd></div>
-            <div class="meta-item"><dt>Category</dt><dd>Selected Work</dd></div>
-            <div class="meta-item"><dt>Services</dt><dd>Concept, 3D Modeling, Character Design, Branding, Advertising</dd></div>
-            <div class="meta-item"><dt>Role</dt><dd>Creative Director</dd></div>
-          </dl>
-        </div>
         </section>
+        
+        <img src="./media/sessio/1.png" alt="Sessio Hero" class="hero-image" />
+        
+        <div class="content-block">
+          <div class="content-text">
+            <h3>Concept</h3>
+            <h2>A Revolutionary Skatepark</h2>
+            <p>Sessio is a revolutionary skatepark concept that pushes the limits of what's expected. Skateboarders thrive on doing the unexpected, skating where they're not supposed to, taking risks, and standing out. That's why traditional skateparks often feel tame and uninspiring. With Sessio, I set out to redefine the skatepark by drawing inspiration from the wonders of the world, places that feel so exclusive and off-limits.</p>
+          </div>
+          <div class="content-image" data-tilt>
+            <img src="./media/sessio/2.png" alt="Sessio Concept" loading="lazy" />
+          </div>
+        </div>
+        
+        <div class="content-block reverse">
+          <div class="content-image" data-tilt>
+            <img src="./media/sessio/3.png" alt="Sessio Creative Strategy" loading="lazy" />
+          </div>
+          <div class="content-text">
+            <h3>Creative Strategy</h3>
+            <h2>Meet Sevvy the Frog</h2>
+            <p>I wanted to push the boundaries of skateboarding and make Sessio feel like a whole new world, kind of like Disney. I modeled a frog, named Sevvy, to be the mascot of Sessio. Sevvy represents that playful, rebellious spirit that skateboarding is all about, guiding riders into a realm where the rules are rewritten. The strategy was to blend wonder with a touch of the forbidden, creating an experience that turns every skate session into an epic adventure.</p>
+          </div>
+        </div>
+        
+        <div class="content-block">
+          <div class="content-text">
+            <h3>Advertising</h3>
+            <h2>Campaign</h2>
+            <p>For the ad campaign, I wanted to push this idea of Sevvy traveling all over, skating the different wonders while making it look like something themepark related. I envisioned bold, vibrant visuals of Sevvy tackling iconic, off-limits skate spots that feel like epic rides, inviting skaters into a world of adventure. The campaign captures that rebellious, fun spirit of skateboarding and transforms each ride into a journey where every corner of the map is a new, exhilarating attraction.</p>
+          </div>
+          <div class="content-image" data-tilt>
+            <img src="./media/sessio/4.png" alt="Sessio Advertising" loading="lazy" />
+          </div>
+        </div>
+        
+        <div class="content-block reverse">
+          <div class="content-image" data-tilt>
+            <img src="./media/sessio/5.png" alt="Sessio Process" loading="lazy" />
+          </div>
+          <div class="content-text">
+            <h3>Process</h3>
+            <h2>Creating the World</h2>
+            <p>Here's some of the process that went in to creating Sessio, from character design to world-building.</p>
+          </div>
+        </div>
+        
         <div class="section-divider"></div>
-        <h2 class="gallery-title">Project Gallery</h2>
-
+        <h2 class="gallery-title">Gallery</h2>
+        
         <div class="project-gallery">
-                    <div class="gallery-item" data-tilt><img src="./media/sessio/1.png" alt="Sessio" loading="lazy" /></div>
-          <div class="gallery-item" data-tilt><img src="./media/sessio/2.png" alt="Sessio" loading="lazy" /></div>
-          <div class="gallery-item" data-tilt><img src="./media/sessio/3.png" alt="Sessio" loading="lazy" /></div>
-          <div class="gallery-item" data-tilt><img src="./media/sessio/4.png" alt="Sessio" loading="lazy" /></div>
-          <div class="gallery-item" data-tilt><img src="./media/sessio/5.png" alt="Sessio" loading="lazy" /></div>
           <div class="gallery-item" data-tilt><img src="./media/sessio/6hyKnrCwM8IemoSw8kuHjH5unwQ.png" alt="Sessio" loading="lazy" /></div>
           <div class="gallery-item" data-tilt><img src="./media/sessio/6.png" alt="Sessio" loading="lazy" /></div>
           <div class="gallery-item" data-tilt><img src="./media/sessio/7.png" alt="Sessio" loading="lazy" /></div>
@@ -127,7 +206,6 @@
           <div class="gallery-item" data-tilt><img src="./media/sessio/9.webp" alt="Sessio" loading="lazy" /></div>
           <div class="gallery-item" data-tilt><img src="./media/sessio/10.webp" alt="Sessio" loading="lazy" /></div>
           <div class="gallery-item" data-tilt><img src="./media/sessio/zPJiuI55d1gr5zlbU9hAXihG2A.png" alt="Sessio" loading="lazy" /></div>
-
         </div>
 
         <nav class="project-nav">
@@ -157,7 +235,7 @@
         const reset = () => { if (animationFrameId) { window.cancelAnimationFrame(animationFrameId); animationFrameId = 0; } el.style.setProperty('--pin-rx', '0deg'); el.style.setProperty('--pin-ry', '0deg'); el.style.setProperty('--pin-scale', '1'); };
         el.addEventListener('pointerleave', reset); el.addEventListener('pointercancel', reset); el.addEventListener('pointerdown', () => el.style.setProperty('--pin-scale', '1.01')); el.addEventListener('pointerup', () => el.style.setProperty('--pin-scale', '1.02'));
       }
-      document.querySelectorAll('.gallery-item[data-tilt]').forEach(setupCardTilt);
+      document.querySelectorAll('[data-tilt]').forEach(setupCardTilt);
     </script>
   </body>
 </html>
