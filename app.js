@@ -24,10 +24,38 @@ let isLoading = false;
 let currentLightboxIndex = -1;
 let lightboxSwapToken = 0;
 let imageObserver = null;
+let boardColumns = [];
+let columnHeights = [0, 0, 0, 0];
 
 const PREFETCH_NEIGHBOR_COUNT = 2;
 const EAGER_LOAD_COUNT = 8;
 const OBSERVER_ROOT_MARGIN = '640px 0px';
+const COLUMN_COUNT = 4;
+
+function initBoardColumns() {
+  if (boardColumns.length > 0) return;
+  board.innerHTML = '';
+  boardColumns = [];
+  columnHeights = [0, 0, 0, 0];
+  for (let i = 0; i < COLUMN_COUNT; i++) {
+    const col = document.createElement('div');
+    col.className = 'board-column';
+    board.appendChild(col);
+    boardColumns.push(col);
+  }
+}
+
+function getShortestColumnIndex() {
+  let minIndex = 0;
+  let minHeight = columnHeights[0];
+  for (let i = 1; i < COLUMN_COUNT; i++) {
+    if (columnHeights[i] < minHeight) {
+      minHeight = columnHeights[i];
+      minIndex = i;
+    }
+  }
+  return minIndex;
+}
 const CARD_TILT_MAX_DEGREES = 7;
 const HAS_FINE_POINTER = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 const ALLOWED_MEDIA_EXTENSIONS = new Set(['.jpg', '.jpeg', '.png', '.webp', '.gif', '.avif', '.mp4', '.m4v', '.webm', '.mov']);
@@ -772,7 +800,9 @@ function loadMoreImages() {
   const previousCount = displayedCount;
   displayedCount = Math.min(displayedCount + LOAD_MORE_COUNT, allImages.length);
   
-  // Only append new images instead of re-rendering all
+  initBoardColumns();
+  
+  // Only append new images to the shortest column
   const newImages = allImages.slice(previousCount, displayedCount);
   
   for (const image of newImages) {
@@ -781,7 +811,14 @@ function loadMoreImages() {
     
     const newCard = buildCard(image, true);
     imageCards.set(image.name, newCard);
-    board.appendChild(newCard);
+    
+    // Add to shortest column
+    const colIndex = getShortestColumnIndex();
+    boardColumns[colIndex].appendChild(newCard);
+    
+    // Estimate height (will be updated when image loads)
+    const aspectRatio = image.height && image.width ? image.height / image.width : 1;
+    columnHeights[colIndex] += aspectRatio * 100 + 5; // 5px gap
     
     const mediaElement = newCard.querySelector('.pin-image, .pin-video');
     if (mediaElement instanceof HTMLVideoElement) {
@@ -869,11 +906,38 @@ function syncCards(images) {
   imageIndexByName.clear();
   images.forEach((image, index) => imageIndexByName.set(image.name, index));
   
+  // Initialize columns
+  initBoardColumns();
+  
   // Calculate initial display count
   displayedCount = Math.min(INITIAL_LOAD_COUNT, images.length);
   const imagesToShow = images.slice(0, displayedCount);
   
-  renderCards(imagesToShow);
+  // Clear and rebuild
+  imageCards.clear();
+  columnHeights = [0, 0, 0, 0];
+  boardColumns.forEach(col => col.innerHTML = '');
+  
+  // Distribute images across columns
+  for (const image of imagesToShow) {
+    const newCard = buildCard(image, true);
+    imageCards.set(image.name, newCard);
+    
+    const colIndex = getShortestColumnIndex();
+    boardColumns[colIndex].appendChild(newCard);
+    
+    const aspectRatio = image.height && image.width ? image.height / image.width : 1;
+    columnHeights[colIndex] += aspectRatio * 100 + 5;
+    
+    const mediaElement = newCard.querySelector('.pin-image, .pin-video');
+    if (mediaElement instanceof HTMLVideoElement) {
+      const playbackObserver = getVideoPlaybackObserver();
+      if (playbackObserver) {
+        playbackObserver.observe(mediaElement);
+      }
+    }
+    queueCardMediaLoad(mediaElement, false);
+  }
   
   // Create and append Load More button if needed
   const boardWrap = document.querySelector('.board-wrap');
