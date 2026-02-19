@@ -25,12 +25,12 @@ let currentLightboxIndex = -1;
 let lightboxSwapToken = 0;
 let imageObserver = null;
 let boardColumns = [];
-let columnHeights = [0, 0, 0, 0];
+let columnHeights = [0, 0];
 
 const PREFETCH_NEIGHBOR_COUNT = 2;
 const EAGER_LOAD_COUNT = 8;
 const OBSERVER_ROOT_MARGIN = '640px 0px';
-const COLUMN_COUNT = 4;
+const COLUMN_COUNT = 2;
 
 function initBoardColumns() {
   if (boardColumns.length > 0) return;
@@ -915,7 +915,7 @@ function syncCards(images) {
   
   // Clear and rebuild
   imageCards.clear();
-  columnHeights = [0, 0, 0, 0];
+  columnHeights = [0, 0];
   boardColumns.forEach(col => col.innerHTML = '');
   
   // Distribute images across columns

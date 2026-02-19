@@ -948,7 +948,7 @@ a {
 
 .board {
   display: flex;
-  gap: 18px;
+  gap: 8px;
   align-items: flex-start;
 }
 
@@ -1228,7 +1228,7 @@ a {
 
   .board {
     display: flex;
-    gap: 18px;
+    gap: 8px;
   }
 
   .board-column {
@@ -1289,7 +1289,7 @@ a {
 
   .board {
     display: flex;
-    gap: 18px;
+    gap: 8px;
   }
 
   .board-column {
@@ -1385,7 +1385,7 @@ a {
 
   .board {
     display: flex;
-    gap: 18px;
+    gap: 8px;
   }
 
   .board-column {
