@@ -948,7 +948,7 @@ a {
 
 .board {
   display: flex;
-  gap: 5px;
+  gap: 18px;
   align-items: flex-start;
 }
 
@@ -956,7 +956,7 @@ a {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 18px;
 }
 
 .pin-card {
@@ -1228,14 +1228,14 @@ a {
 
   .board {
     display: flex;
-    gap: 5px;
+    gap: 18px;
   }
 
   .board-column {
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 18px;
   }
 
   .channel-meta {
@@ -1289,14 +1289,14 @@ a {
 
   .board {
     display: flex;
-    gap: 5px;
+    gap: 18px;
   }
 
   .board-column {
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 18px;
   }
 
   .board-wrap {
@@ -1385,14 +1385,14 @@ a {
 
   .board {
     display: flex;
-    gap: 5px;
+    gap: 18px;
   }
 
   .board-column {
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 18px;
   }
 
   .subpage-grid {
