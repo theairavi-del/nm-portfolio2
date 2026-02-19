@@ -3,14 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Logos | Nico Maggioli</title>
+    <title>Cognis | Nico Maggioli</title>
     <link rel="icon" type="image/png" sizes="32x32" href="./nm_fav.png" />
     <link rel="stylesheet" href="./styles.css" />
     <style>
       .project-detail { padding: 40px 68px 64px; }
       @media (max-width: 1400px) { .project-detail { padding: 40px 32px 64px; } }
       @media (max-width: 640px) { .project-detail { padding: 20px 16px 40px; } }
-      
       
       .project-info { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin: 30px 0 60px; }
       @media (max-width: 768px) { .project-info { grid-template-columns: 1fr; gap: 30px; } }
@@ -22,14 +21,77 @@
       .section-divider { height: 1px; background: var(--line); margin: 0 0 40px; }
       .gallery-title { font-size: 14px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted-2); margin: 0 0 24px; }
       
-      /* Full-width single image gallery */
-      .project-gallery { 
-        width: 100%;
-        margin-bottom: 60px; 
+      .content-block {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+        margin: 80px 0;
+      }
+      @media (max-width: 968px) { 
+        .content-block { 
+          grid-template-columns: 1fr; 
+          gap: 40px;
+          margin: 60px 0;
+        }
+        .content-block.reverse .content-text { order: 2; }
+        .content-block.reverse .content-image { order: 1; }
       }
       
-      .gallery-item { 
+      .content-text h3 { 
+        font-size: 13px; 
+        text-transform: uppercase; 
+        letter-spacing: 2px; 
+        color: var(--accent); 
+        margin-bottom: 20px;
+        font-weight: 600;
+      }
+      .content-text h2 {
+        font-size: 32px;
+        font-weight: 600;
+        margin: 0 0 24px;
+        color: var(--text);
+        letter-spacing: -0.02em;
+        line-height: 1.2;
+      }
+      .content-text p { 
+        color: var(--muted); 
+        line-height: 1.8; 
+        font-size: 16px;
+        margin: 0 0 16px;
+      }
+      
+      .content-image {
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+        border: 1px solid var(--line);      }
+      .content-image img, .content-image video {
         width: 100%;
+        height: auto;
+        display: block;
+      }
+      
+      .hero-image {
+        width: 100%;
+        max-height: 70vh;
+        object-fit: cover;
+        border-radius: 12px;
+        margin: 40px 0 60px;
+              }
+      
+      .project-gallery { 
+        column-count: 4; 
+        column-gap: 18px; 
+        margin: 60px 0; 
+      }
+      @media (max-width: 1200px) { .project-gallery { column-count: 3; } }
+      @media (max-width: 940px) { .project-gallery { column-count: 2; } }
+      @media (max-width: 640px) { .project-gallery { column-count: 2; } }
+      
+      .gallery-item { 
+        break-inside: avoid; 
+        margin-bottom: 18px; 
         background: var(--card-bg); 
         border: 1px solid var(--line); 
         overflow: hidden; 
@@ -72,37 +134,73 @@
       <main class="project-detail">
         <section class="channel-head">
           <div class="project-info">
-          <div>
-            <h1 class="project-title">Logos</h1>
-            <p class="project-description">I began my design journey making logos and that's how I got some of my first clients. Here are some of my favorite logos I've created over the years. Enjoy!</p>
+            <div>
+              <h1 class="project-title">Cognis</h1>
+              <p class="project-description">At the start of 2023, with tools like ChatGPT and Midjourney on the rise, I saw an opportunity to bring a long time dream to life: making a comic book.</p>
+            </div>
+            <dl class="project-meta">
+              <div class="meta-item"><dt>Year</dt><dd>2024</dd></div>
+              <div class="meta-item"><dt>Category</dt><dd>Selected Work</dd></div>
+              <div class="meta-item"><dt>Services</dt><dd>Concept, AI Art, Storytelling, Print Design, Riso Printing</dd></div>
+              <div class="meta-item"><dt>Role</dt><dd>Creative Director</dd></div>
+            </dl>
           </div>
-          <dl class="project-meta">
-            <div class="meta-item"><dt>Year</dt><dd>2024</dd></div>
-            <div class="meta-item"><dt>Category</dt><dd>Selected Work</dd></div>
-            <div class="meta-item"><dt>Services</dt><dd>Logo Design, Brand Identity</dd></div>
-            <div class="meta-item"><dt>Role</dt><dd>Creative Director</dd></div>
-          </dl>
-        </div>
         </section>
+        
+        <img src="./media/cognis/1.png" alt="Cognis Hero" class="hero-image" />
+        
+        <div class="content-block">
+          <div class="content-text">
+            <h3>Concept</h3>
+            <h2>AI Meets Traditional Storytelling</h2>
+            <p>At the start of 2023, with tools like ChatGPT and Midjourney on the rise, I saw an opportunity to bring a long time dream to life: making a comic book. I spent weeks generating thousands of images, combining them into a cohesive narrative, and used Photoshop to maintain character consistency throughout. The result was a fully realized AI-assisted visual story, blending traditional storytelling with cutting-edge technology.</p>
+          </div>
+          <div class="content-image" data-tilt>
+            <img src="./media/cognis/llk2v2ue8sghF49ztVTxIJM.png" alt="Cognis Concept" loading="lazy" />
+          </div>
+        </div>
+        
+        <div class="content-block reverse">
+          <div class="content-image" data-tilt>
+            <img src="./media/cognis/2.png" alt="Cognis Riso Print" loading="lazy" />
+          </div>
+          <div class="content-text">
+            <h3>Why Riso Print?</h3>
+            <h2>Old Tech, New Stories</h2>
+            <p>I chose to Riso print this comic as a playful contrast between old and new technology. Since Cognis explores the future and AI, it felt fitting to use a retro printing aesthetic like Riso, emphasizing the blend of classic craftsmanship with futuristic themes. The irony of using older tech to print a story about cutting-edge AI gives the project a unique, nostalgic edge while staying rooted in futurism.</p>
+          </div>
+        </div>
+        
+        <div class="content-block">
+          <div class="content-text">
+            <h3>Process</h3>
+            <h2>Crafting the Visual Narrative</h2>
+            <p>To match the theme of the comic, I combined all my ideas and processes to create this unique comic book. From AI-generated concepts to careful editing and Riso printing, every step was designed to bridge the gap between emerging technology and traditional art forms.</p>
+          </div>
+          <div class="content-image" data-tilt>
+            <img src="./media/cognis/3.png" alt="Cognis Process" loading="lazy" />
+          </div>
+        </div>
+        
         <div class="section-divider"></div>
-        <h2 class="gallery-title">Project Gallery</h2>
-
+        <h2 class="gallery-title">Gallery</h2>
+        
         <div class="project-gallery">
-          <div class="gallery-item" data-tilt><img src="./media/logos/0MHoY0a9fhnklvtVALYhikTE9SM.jpg" alt="Logos" loading="lazy" /></div>
+          <div class="gallery-item" data-tilt><img src="./media/cognis/P7En9uM5opfvlaWzS9S5tyGB4.png" alt="Cognis" loading="lazy" /></div>
         </div>
 
         <nav class="project-nav">
           <div class="nav-links">
-            <a href="./fingerboard.html" class="nav-link">
+            <a href="./peak.html" class="nav-link">
               <span>Previous</span>
-              <strong>Fingerboard</strong>
+              <strong>Peak</strong>
             </a>
           </div>
           <a href="/projects" class="back-link">Back to Projects</a>
           <div class="nav-links">
-            <a href="./music.html" class="nav-link">
+            <a href="./pawlish.html" class="nav-link">
               <span>Next</span>
-              <strong>Music</strong>
+              <strong>Pawlish</strong>
             </a>
           </div>
         </nav>
@@ -118,7 +216,7 @@
         const reset = () => { if (animationFrameId) { window.cancelAnimationFrame(animationFrameId); animationFrameId = 0; } el.style.setProperty('--pin-rx', '0deg'); el.style.setProperty('--pin-ry', '0deg'); el.style.setProperty('--pin-scale', '1'); };
         el.addEventListener('pointerleave', reset); el.addEventListener('pointercancel', reset); el.addEventListener('pointerdown', () => el.style.setProperty('--pin-scale', '1.01')); el.addEventListener('pointerup', () => el.style.setProperty('--pin-scale', '1.02'));
       }
-      document.querySelectorAll('.gallery-item[data-tilt]').forEach(setupCardTilt);
+      document.querySelectorAll('[data-tilt]').forEach(setupCardTilt);
     </script>
   </body>
 </html>

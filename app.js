@@ -31,7 +31,12 @@ const OBSERVER_ROOT_MARGIN = '640px 0px';
 const CARD_TILT_MAX_DEGREES = 7;
 const HAS_FINE_POINTER = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 const ALLOWED_MEDIA_EXTENSIONS = new Set(['.jpg', '.jpeg', '.png', '.webp', '.gif', '.avif', '.mp4', '.m4v', '.webm', '.mov']);
+const INITIAL_LOAD_COUNT = 30;
+const LOAD_MORE_COUNT = 30;
 let videoPlaybackObserver = null;
+let displayedCount = 0;
+let loadMoreButton = null;
+let allImages = [];
 
 function normalizeName(fileName) {
   return fileName.replace(/\.[^/.]+$/, '').replace(/[_-]+/g, ' ').trim();
@@ -423,7 +428,7 @@ function getVideoPlaybackObserver() {
 }
 
 function updateLightboxNavState() {
-  const canNavigate = imagesState.length > 1;
+  const canNavigate = allImages.length > 1;
   lightboxPrev.disabled = !canNavigate;
   lightboxNext.disabled = !canNavigate;
   lightboxPrev.hidden = !canNavigate;
@@ -441,15 +446,15 @@ function preloadImage(sourceUrl) {
 }
 
 function preloadNeighbors(index) {
-  if (imagesState.length < 2) {
+  if (allImages.length < 2) {
     return;
   }
 
   for (let step = 1; step <= PREFETCH_NEIGHBOR_COUNT; step += 1) {
-    const nextIndex = (index + step) % imagesState.length;
-    const prevIndex = (index - step + imagesState.length) % imagesState.length;
-    const nextMedia = imagesState[nextIndex];
-    const prevMedia = imagesState[prevIndex];
+    const nextIndex = (index + step) % allImages.length;
+    const prevIndex = (index - step + allImages.length) % allImages.length;
+    const nextMedia = allImages[nextIndex];
+    const prevMedia = allImages[prevIndex];
     if (!isVideoMedia(nextMedia)) {
       preloadImage(buildImageUrl(nextMedia));
     }
@@ -460,7 +465,7 @@ function preloadNeighbors(index) {
 }
 
 function renderLightboxMedia(index) {
-  const media = imagesState[index];
+  const media = allImages[index];
   if (!media) {
     return;
   }
@@ -542,12 +547,12 @@ function renderLightboxMedia(index) {
 }
 
 function openLightbox(index, previewSrc = '') {
-  if (!imagesState.length) {
+  if (!allImages.length) {
     return;
   }
 
-  currentLightboxIndex = (index + imagesState.length) % imagesState.length;
-  const currentMedia = imagesState[currentLightboxIndex];
+  currentLightboxIndex = (index + allImages.length) % allImages.length;
+  const currentMedia = allImages[currentLightboxIndex];
   lightbox.hidden = false;
   document.body.style.overflow = 'hidden';
   updateLightboxNavState();
@@ -560,8 +565,9 @@ function openLightbox(index, previewSrc = '') {
 }
 
 function openLightboxByName(name, previewSrc = '') {
-  const index = imageIndexByName.get(name);
-  if (typeof index !== 'number') {
+  // Find index in allImages, not just displayed ones
+  const index = allImages.findIndex(img => img.name === name);
+  if (typeof index !== 'number' || index === -1) {
     return;
   }
   openLightbox(index, previewSrc);
@@ -586,11 +592,11 @@ function closeLightbox() {
 }
 
 function navigateLightbox(step) {
-  if (lightbox.hidden || imagesState.length < 2) {
+  if (lightbox.hidden || allImages.length < 2) {
     return;
   }
 
-  currentLightboxIndex = (currentLightboxIndex + step + imagesState.length) % imagesState.length;
+  currentLightboxIndex = (currentLightboxIndex + step + allImages.length) % allImages.length;
   renderLightboxMedia(currentLightboxIndex);
 }
 
@@ -720,11 +726,73 @@ function reorderBoardIfNeeded(orderedCards) {
   }
 }
 
-function syncCards(images) {
-  imagesState = images;
-  imageIndexByName.clear();
-  images.forEach((image, index) => imageIndexByName.set(image.name, index));
+function createLoadMoreButton() {
+  if (loadMoreButton) return loadMoreButton;
+  
+  const button = document.createElement('button');
+  button.className = 'load-more-button';
+  button.textContent = 'Load More';
+  button.style.cssText = `
+    display: block;
+    margin: 40px auto;
+    padding: 14px 32px;
+    background: var(--chip);
+    color: var(--text);
+    border: 1px solid var(--line);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 150ms ease;
+  `;
+  button.addEventListener('mouseover', () => {
+    button.style.background = 'var(--chip-hover)';
+  });
+  button.addEventListener('mouseout', () => {
+    button.style.background = 'var(--chip)';
+  });
+  button.addEventListener('click', loadMoreImages);
+  
+  loadMoreButton = button;
+  return button;
+}
 
+function updateLoadMoreButton() {
+  if (!loadMoreButton) return;
+  
+  const remaining = allImages.length - displayedCount;
+  if (remaining <= 0) {
+    loadMoreButton.style.display = 'none';
+  } else {
+    loadMoreButton.style.display = 'block';
+    loadMoreButton.textContent = `Load More (${remaining} remaining)`;
+  }
+}
+
+function loadMoreImages() {
+  const previousCount = displayedCount;
+  displayedCount = Math.min(displayedCount + LOAD_MORE_COUNT, allImages.length);
+  
+  const imagesToShow = allImages.slice(0, displayedCount);
+  renderCards(imagesToShow);
+  
+  // Load media for newly added cards
+  const boardChildren = Array.from(board.children);
+  for (let i = previousCount; i < boardChildren.length; i++) {
+    const card = boardChildren[i];
+    const mediaElement = card.querySelector('.pin-image, .pin-video');
+    if (mediaElement instanceof HTMLVideoElement) {
+      const playbackObserver = getVideoPlaybackObserver();
+      if (playbackObserver) {
+        playbackObserver.observe(mediaElement);
+      }
+    }
+    queueCardMediaLoad(mediaElement, i < EAGER_LOAD_COUNT);
+  }
+  
+  updateLoadMoreButton();
+}
+
+function renderCards(images) {
   const nextNames = new Set(images.map((image) => image.name));
 
   for (const [name, card] of imageCards.entries()) {
@@ -786,18 +854,41 @@ function syncCards(images) {
 
   board.hidden = false;
   emptyState.hidden = true;
+}
+
+function syncCards(images) {
+  allImages = images;
+  imagesState = images;
+  imageIndexByName.clear();
+  images.forEach((image, index) => imageIndexByName.set(image.name, index));
+  
+  // Calculate initial display count
+  displayedCount = Math.min(INITIAL_LOAD_COUNT, images.length);
+  const imagesToShow = images.slice(0, displayedCount);
+  
+  renderCards(imagesToShow);
+  
+  // Create and append Load More button if needed
+  const boardWrap = document.querySelector('.board-wrap');
+  if (boardWrap && images.length > INITIAL_LOAD_COUNT) {
+    const button = createLoadMoreButton();
+    if (!button.parentElement) {
+      boardWrap.appendChild(button);
+    }
+    updateLoadMoreButton();
+  }
 
   if (!lightbox.hidden) {
     const activeName = lightbox.dataset.currentName;
-    const activeIndex = typeof activeName === 'string' ? imageIndexByName.get(activeName) : undefined;
+    const activeIndex = typeof activeName === 'string' ? allImages.findIndex(img => img.name === activeName) : -1;
 
-    if (typeof activeIndex !== 'number') {
+    if (activeIndex === -1) {
       closeLightbox();
       return;
     }
 
     currentLightboxIndex = activeIndex;
-    const currentImage = imagesState[activeIndex];
+    const currentImage = allImages[activeIndex];
     if (lightbox.dataset.currentKey !== currentImage.key) {
       renderLightboxMedia(activeIndex);
     } else {
