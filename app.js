@@ -772,22 +772,29 @@ function loadMoreImages() {
   const previousCount = displayedCount;
   displayedCount = Math.min(displayedCount + LOAD_MORE_COUNT, allImages.length);
   
-  const imagesToShow = allImages.slice(0, displayedCount);
-  renderCards(imagesToShow);
+  // Only append new images instead of re-rendering all
+  const newImages = allImages.slice(previousCount, displayedCount);
   
-  // Load media for newly added cards
-  const boardChildren = Array.from(board.children);
-  for (let i = previousCount; i < boardChildren.length; i++) {
-    const card = boardChildren[i];
-    const mediaElement = card.querySelector('.pin-image, .pin-video');
+  for (const image of newImages) {
+    const existingCard = imageCards.get(image.name);
+    if (existingCard) continue;
+    
+    const newCard = buildCard(image, true);
+    imageCards.set(image.name, newCard);
+    board.appendChild(newCard);
+    
+    const mediaElement = newCard.querySelector('.pin-image, .pin-video');
     if (mediaElement instanceof HTMLVideoElement) {
       const playbackObserver = getVideoPlaybackObserver();
       if (playbackObserver) {
         playbackObserver.observe(mediaElement);
       }
     }
-    queueCardMediaLoad(mediaElement, i < EAGER_LOAD_COUNT);
+    queueCardMediaLoad(mediaElement, false);
   }
+  
+  // Update imagesState to include all displayed images
+  imagesState = allImages.slice(0, displayedCount);
   
   updateLoadMoreButton();
 }
