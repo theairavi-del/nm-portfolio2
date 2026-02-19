@@ -947,22 +947,15 @@ a {
 }
 
 .board {
-  display: flex;
-  gap: 8px;
-  align-items: flex-start;
-}
-
-.board-column {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
+  column-count: 4;
+  column-gap: 18px;
 }
 
 .pin-card {
   min-width: 0;
-  margin: 0;
-  display: block;
+  margin: 0 0 18px;
+  break-inside: avoid;
+  display: inline-block;
   width: 100%;
 }
 
@@ -1227,15 +1220,7 @@ a {
   }
 
   .board {
-    display: flex;
-    gap: 8px;
-  }
-
-  .board-column {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
+    column-count: 3;
   }
 
   .channel-meta {
@@ -1288,15 +1273,7 @@ a {
   }
 
   .board {
-    display: flex;
-    gap: 8px;
-  }
-
-  .board-column {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
+    column-count: 2;
   }
 
   .board-wrap {
@@ -1384,15 +1361,7 @@ a {
   }
 
   .board {
-    display: flex;
-    gap: 8px;
-  }
-
-  .board-column {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
+    column-count: 2;
   }
 
   .subpage-grid {
