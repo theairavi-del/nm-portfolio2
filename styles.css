@@ -79,7 +79,7 @@ a {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  padding: 0 68px;
+  padding: 0 18px;
 }
 
 .topbar-left,
@@ -208,7 +208,7 @@ a {
 }
 
 .page-shell {
-  padding: 40px 68px 64px;
+  padding: 40px 18px 64px;
 }
 
 .channel-head {
