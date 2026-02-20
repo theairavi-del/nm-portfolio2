@@ -1448,3 +1448,29 @@ a {
     opacity: 1;
   }
 }
+
+/* Desktop-only and mobile-only visibility helpers */
+.channel-meta.desktop-only-meta {
+  display: grid;
+  visibility: visible;
+  opacity: 1;
+  margin-top: 30px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.45fr);
+  gap: 16px;
+}
+
+.channel-meta.mobile-only-meta {
+  display: none !important;
+}
+
+@media (max-width: 940px) {
+  .channel-meta.desktop-only-meta {
+    display: none !important;
+  }
+  
+  .channel-meta.mobile-only-meta {
+    display: grid !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+}
