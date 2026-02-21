@@ -1244,7 +1244,7 @@ a {
   }
 
   .page-shell {
-    padding: 22px 14px 30px;
+    padding: 22px 8px 30px;
   }
 
   .channel-head {
@@ -1390,7 +1390,7 @@ a {
   }
 
   .lightbox {
-    padding: 14px;
+    padding: 8px;
     padding-top: 70px;
     display: flex;
     flex-direction: column;
