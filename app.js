@@ -913,26 +913,15 @@ function shuffleArray(array) {
 }
 
 function syncCards(images) {
-  allImages = images;
+  // Shuffle all images on every page load
+  allImages = shuffleArray(images);
   imagesState = allImages;
   imageIndexByName.clear();
   allImages.forEach((image, index) => imageIndexByName.set(image.name, index));
   
-  // Calculate initial display count
-  displayedCount = Math.min(INITIAL_LOAD_COUNT, images.length);
-  const imagesToShow = images.slice(0, displayedCount);
-  
-  renderCards(imagesToShow);
-  
-  // Create and append Load More button if needed
-  const boardWrap = document.querySelector('.board-wrap');
-  if (boardWrap && images.length > INITIAL_LOAD_COUNT) {
-    const button = createLoadMoreButton();
-    if (!button.parentElement) {
-      boardWrap.appendChild(button);
-    }
-    updateLoadMoreButton();
-  }
+  // Load ALL images immediately (no Load More needed)
+  displayedCount = allImages.length;
+  renderCards(allImages);
 
   if (!lightbox.hidden) {
     const activeName = lightbox.dataset.currentName;
