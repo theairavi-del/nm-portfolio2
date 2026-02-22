@@ -787,10 +787,17 @@ function createLoadMoreButton() {
 
 function updateLoadMoreButton() {
   if (!loadMoreButton) return;
-  
+
   const remaining = allImages.length - displayedCount;
   if (remaining <= 0) {
     loadMoreButton.style.display = 'none';
+    // Also remove sentinel if all loaded
+    const sentinel = document.getElementById('infinite-scroll-sentinel');
+    if (sentinel) sentinel.remove();
+    if (infiniteScrollObserver) {
+      infiniteScrollObserver.disconnect();
+      infiniteScrollObserver = null;
+    }
   } else {
     loadMoreButton.style.display = 'block';
     loadMoreButton.textContent = `Load More (${remaining} remaining)`;
@@ -837,6 +844,47 @@ function loadMoreImages() {
   }
 
   updateLoadMoreButton();
+}
+
+let infiniteScrollObserver = null;
+
+function setupInfiniteScroll() {
+  // Remove any existing load more button
+  if (loadMoreButton && loadMoreButton.parentElement) {
+    loadMoreButton.remove();
+  }
+
+  // Don't setup if all images already loaded
+  if (displayedCount >= allImages.length) {
+    return;
+  }
+
+  // Create sentinel element at bottom
+  let sentinel = document.getElementById('infinite-scroll-sentinel');
+  if (!sentinel) {
+    sentinel = document.createElement('div');
+    sentinel.id = 'infinite-scroll-sentinel';
+    sentinel.style.cssText = 'height: 100px; width: 100%;';
+    const boardWrap = document.querySelector('.board-wrap');
+    if (boardWrap) {
+      boardWrap.appendChild(sentinel);
+    }
+  }
+
+  // Setup intersection observer for infinite scroll
+  if (infiniteScrollObserver) {
+    infiniteScrollObserver.disconnect();
+  }
+
+  infiniteScrollObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && displayedCount < allImages.length) {
+        loadMoreImages();
+      }
+    });
+  }, { rootMargin: '200px' });
+
+  infiniteScrollObserver.observe(sentinel);
 }
 
 function renderCards(images) {
@@ -919,9 +967,12 @@ function syncCards(images) {
   imageIndexByName.clear();
   allImages.forEach((image, index) => imageIndexByName.set(image.name, index));
   
-  // Load ALL images immediately (no Load More needed)
-  displayedCount = allImages.length;
-  renderCards(allImages);
+  // Progressive loading: render first batch immediately, rest on scroll
+  displayedCount = Math.min(INITIAL_LOAD_COUNT, allImages.length);
+  renderCards(allImages.slice(0, displayedCount));
+  
+  // Setup infinite scroll to load more images
+  setupInfiniteScroll();
 
   if (!lightbox.hidden) {
     const activeName = lightbox.dataset.currentName;
