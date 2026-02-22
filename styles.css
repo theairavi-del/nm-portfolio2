@@ -967,6 +967,8 @@ a {
   break-inside: avoid;
   display: inline-block;
   width: 100%;
+  content-visibility: auto;
+  contain-intrinsic-size: 0 300px;
 }
 
 .pin-card-image {
