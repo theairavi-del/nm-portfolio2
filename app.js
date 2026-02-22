@@ -14,6 +14,8 @@ const lightboxVideo = document.getElementById('lightboxVideo');
 const lightboxClose = document.getElementById('lightboxClose');
 const lightboxPrev = document.getElementById('lightboxPrev');
 const lightboxNext = document.getElementById('lightboxNext');
+const lightboxPrevDesktop = document.getElementById('lightboxPrevDesktop');
+const lightboxNextDesktop = document.getElementById('lightboxNextDesktop');
 
 const imageCards = new Map();
 const imageIndexByName = new Map();
@@ -462,6 +464,14 @@ function updateLightboxNavState() {
   lightboxNext.disabled = !canNavigate;
   lightboxPrev.hidden = !canNavigate;
   lightboxNext.hidden = !canNavigate;
+  if (lightboxPrevDesktop) {
+    lightboxPrevDesktop.disabled = !canNavigate;
+    lightboxPrevDesktop.hidden = !canNavigate;
+  }
+  if (lightboxNextDesktop) {
+    lightboxNextDesktop.disabled = !canNavigate;
+    lightboxNextDesktop.hidden = !canNavigate;
+  }
 }
 
 function preloadImage(sourceUrl) {
@@ -1026,6 +1036,12 @@ async function loadImages() {
 lightboxClose.addEventListener('click', closeLightbox);
 lightboxPrev.addEventListener('click', () => navigateLightbox(-1));
 lightboxNext.addEventListener('click', () => navigateLightbox(1));
+if (lightboxPrevDesktop) {
+  lightboxPrevDesktop.addEventListener('click', () => navigateLightbox(-1));
+}
+if (lightboxNextDesktop) {
+  lightboxNextDesktop.addEventListener('click', () => navigateLightbox(1));
+}
 
 lightbox.addEventListener('click', (event) => {
   if (event.target === lightbox) {
