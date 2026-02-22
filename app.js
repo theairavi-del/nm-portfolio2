@@ -798,6 +798,11 @@ function updateLoadMoreButton() {
 }
 
 function loadMoreImages() {
+  // Ensure board columns are initialized
+  if (boardColumns.length === 0) {
+    initBoardColumns();
+  }
+
   const previousCount = displayedCount;
   displayedCount = Math.min(displayedCount + LOAD_MORE_COUNT, allImages.length);
 
@@ -813,8 +818,10 @@ function loadMoreImages() {
 
     // Add to shortest column
     const colIndex = getShortestColumnIndex();
-    boardColumns[colIndex].appendChild(newCard);
-    columnHeights[colIndex] += newCard.offsetHeight || 300;
+    if (boardColumns[colIndex]) {
+      boardColumns[colIndex].appendChild(newCard);
+      columnHeights[colIndex] += newCard.offsetHeight || 300;
+    }
 
     // Setup media loading
     const mediaElement = newCard.querySelector('.pin-image, .pin-video');
