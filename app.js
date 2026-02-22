@@ -800,24 +800,35 @@ function updateLoadMoreButton() {
 function loadMoreImages() {
   const previousCount = displayedCount;
   displayedCount = Math.min(displayedCount + LOAD_MORE_COUNT, allImages.length);
-  
-  const imagesToShow = allImages.slice(0, displayedCount);
-  renderCards(imagesToShow);
-  
-  // Load media for newly added cards
-  const boardChildren = Array.from(board.children);
-  for (let i = previousCount; i < boardChildren.length; i++) {
-    const card = boardChildren[i];
-    const mediaElement = card.querySelector('.pin-image, .pin-video');
-    if (mediaElement instanceof HTMLVideoElement) {
-      const playbackObserver = getVideoPlaybackObserver();
-      if (playbackObserver) {
-        playbackObserver.observe(mediaElement);
-      }
+
+  // Only append new images without re-rendering existing ones
+  const newImages = allImages.slice(previousCount, displayedCount);
+
+  for (const image of newImages) {
+    if (imageCards.has(image.name)) {
+      continue;
     }
-    queueCardMediaLoad(mediaElement, i < EAGER_LOAD_COUNT);
+    const newCard = buildCard(image, true);
+    imageCards.set(image.name, newCard);
+
+    // Add to shortest column
+    const colIndex = getShortestColumnIndex();
+    boardColumns[colIndex].appendChild(newCard);
+    columnHeights[colIndex] += newCard.offsetHeight || 300;
+
+    // Setup media loading
+    const mediaElement = newCard.querySelector('.pin-image, .pin-video');
+    if (mediaElement) {
+      if (mediaElement instanceof HTMLVideoElement) {
+        const playbackObserver = getVideoPlaybackObserver();
+        if (playbackObserver) {
+          playbackObserver.observe(mediaElement);
+        }
+      }
+      queueCardMediaLoad(mediaElement, false);
+    }
   }
-  
+
   updateLoadMoreButton();
 }
 
