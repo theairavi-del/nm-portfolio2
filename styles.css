@@ -949,6 +949,16 @@ a {
 .board {
   column-count: 4;
   column-gap: 18px;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  contain: layout style paint;
+}
+
+.board-column {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  contain: layout style paint;
 }
 
 .pin-card {
@@ -991,8 +1001,22 @@ a {
 .pin-media-slot {
   width: 100%;
   display: block;
-  background: #090b10;
+  background: linear-gradient(135deg, #0f1014 0%, #1a1b20 50%, #0f1014 100%);
+  background-size: 200% 200%;
+  animation: shimmer 1.5s ease-in-out infinite;
   overflow: hidden;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.pin-media-slot:has(.is-ready) {
+  animation: none;
+  background: #090b10;
 }
 
 .pin-image {

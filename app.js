@@ -31,7 +31,7 @@ let columnHeights = [0, 0];
 
 const PREFETCH_NEIGHBOR_COUNT = 2;
 const EAGER_LOAD_COUNT = 8;
-const OBSERVER_ROOT_MARGIN = '640px 0px';
+const OBSERVER_ROOT_MARGIN = '1000px 0px';  // Preload images earlier like Pinterest
 const COLUMN_COUNT = 2;
 
 function initBoardColumns() {
@@ -61,9 +61,10 @@ function getShortestColumnIndex() {
 
 const CARD_TILT_MAX_DEGREES = 7;
 const HAS_FINE_POINTER = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+const IS_TOUCH_DEVICE = window.matchMedia('(pointer: coarse)').matches;
 const ALLOWED_MEDIA_EXTENSIONS = new Set(['.jpg', '.jpeg', '.png', '.webp', '.gif', '.avif', '.mp4', '.m4v', '.webm', '.mov']);
-const INITIAL_LOAD_COUNT = 30;
-const LOAD_MORE_COUNT = 30;
+const INITIAL_LOAD_COUNT = 20;  // Faster initial paint
+const LOAD_MORE_COUNT = 40;     // Load more at once for smoother scroll
 let videoPlaybackObserver = null;
 let displayedCount = 0;
 let loadMoreButton = null;
@@ -640,7 +641,8 @@ function navigateLightbox(step) {
 }
 
 function setupCardTilt(button) {
-  if (!HAS_FINE_POINTER || !button) {
+  // Skip 3D tilt on touch devices for better scroll performance
+  if (!HAS_FINE_POINTER || IS_TOUCH_DEVICE || !button) {
     return;
   }
 
@@ -886,13 +888,19 @@ function setupInfiniteScroll() {
     infiniteScrollObserver.disconnect();
   }
 
+  // Use a larger rootMargin to preload images earlier (like Pinterest)
   infiniteScrollObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting && displayedCount < allImages.length) {
-        loadMoreImages();
+        // Throttle to prevent rapid loading
+        requestAnimationFrame(() => {
+          if (displayedCount < allImages.length) {
+            loadMoreImages();
+          }
+        });
       }
     });
-  }, { rootMargin: '200px' });
+  }, { rootMargin: '500px', threshold: 0 });
 
   infiniteScrollObserver.observe(sentinel);
 }
