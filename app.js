@@ -895,7 +895,7 @@ function shuffleArray(array) {
 }
 
 function syncCards(images) {
-  allImages = shuffleArray(images);
+  allImages = images;
   imagesState = allImages;
   imageIndexByName.clear();
   allImages.forEach((image, index) => imageIndexByName.set(image.name, index));
