@@ -118,71 +118,296 @@
         }
         
         
-        .video-canvas {
+        
+        .lab-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            perspective: 1000px;
+            overflow: hidden;
+            background: #0a0a0f;
+            z-index: 1;
+        }
+        
+        .lab-room {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100vw;
+            height: 100vh;
+            transform-style: preserve-3d;
+            transform: translate(-50%, -50%) translateZ(0);
+            transition: transform 0.1s linear;
+        }
+        
+        .lab-wall {
+            position: absolute;
+            background: linear-gradient(135deg, #1a1a2e 0%, #0f0f1a 100%);
+            border: 1px solid #2a2a3e;
+        }
+        
+        .lab-wall-back {
+            width: 100vw;
+            height: 100vh;
+            transform: translateZ(-50vw);
+            background: 
+                linear-gradient(135deg, #1a1a2e 0%, #0f0f1a 100%),
+                repeating-linear-gradient(90deg, transparent, transparent 50px, rgba(45, 213, 18, 0.03) 50px, rgba(45, 213, 18, 0.03) 51px);
+        }
+        
+        .lab-wall-left {
+            width: 100vw;
+            height: 100vh;
+            transform: rotateY(90deg) translateZ(-50vw);
+            left: 0;
+        }
+        
+        .lab-wall-right {
+            width: 100vw;
+            height: 100vh;
+            transform: rotateY(-90deg) translateZ(-50vw);
+            right: 0;
+        }
+        
+        .lab-floor {
+            position: absolute;
+            width: 100vw;
+            height: 100vw;
+            background: 
+                linear-gradient(to bottom, #0a0a0f, #1a1a2e),
+                repeating-linear-gradient(0deg, transparent, transparent 100px, rgba(45, 213, 18, 0.05) 100px, rgba(45, 213, 18, 0.05) 101px);
+            transform: rotateX(90deg) translateZ(50vh);
+            top: 50%;
+            left: 50%;
+            margin-left: -50vw;
+            margin-top: -50vw;
+        }
+        
+        .lab-ceiling {
+            position: absolute;
+            width: 100vw;
+            height: 100vw;
+            background: #050508;
+            transform: rotateX(-90deg) translateZ(50vh);
+            top: 50%;
+            left: 50%;
+            margin-left: -50vw;
+            margin-top: -50vw;
+        }
+        
+        .lab-screen-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) translateZ(-30vw);
+            width: 60vw;
+            height: 40vh;
+            transition: transform 0.1s linear;
+        }
+        
+        .crt-frame {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background: #2a2a3e;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 
+                0 0 100px rgba(45, 213, 18, 0.2),
+                inset 0 0 60px rgba(0,0,0,0.5);
+            border: 3px solid #3a3a4e;
+        }
+        
+        .crt-frame::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            border: 2px solid #4a4a5e;
+            border-radius: 15px;
+            pointer-events: none;
+        }
+        
+        .crt-screen {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .crt-screen video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: contrast(1.2) brightness(0.9);
+        }
+        
+        .crt-scanlines {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            overflow: hidden;
-            background: #000;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 2px,
+                rgba(0,0,0,0.3) 2px,
+                rgba(0,0,0,0.3) 4px
+            );
+            pointer-events: none;
+            z-index: 10;
         }
         
-        .video-tile {
+        .crt-flicker {
             position: absolute;
-            cursor: move;
-            border: 2px solid rgba(255,255,255,0.1);
-            border-radius: 8px;
-            overflow: hidden;
-            transition: transform 0.2s, box-shadow 0.2s;
-            background: #111;
-        }
-        
-        .video-tile:hover {
-            transform: scale(1.02);
-            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-            border-color: rgba(255,255,255,0.3);
-            z-index: 100 !important;
-        }
-        
-        .video-tile.dragging {
-            opacity: 0.8;
-            transform: scale(1.05);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.7);
-            z-index: 1000 !important;
-        }
-        
-        .video-tile video {
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            background: rgba(45, 213, 18, 0.02);
+            animation: flicker 0.15s infinite;
             pointer-events: none;
+            z-index: 11;
         }
         
-        .tile-handle {
+        @keyframes flicker {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.98; }
+        }
+        
+        .crt-glow {
             position: absolute;
-            top: 8px;
-            right: 8px;
-            width: 20px;
-            height: 20px;
-            background: rgba(255,255,255,0.2);
-            border-radius: 50%;
-            cursor: grab;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at center, rgba(45, 213, 18, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 12;
         }
         
-        .tile-handle:active {
-            cursor: grabbing;
-            background: rgba(255,255,255,0.5);
-        }
-        
-        .video-tile::before {
-            content: '⋮⋮';
+        .screen-label {
             position: absolute;
-            top: 5px;
-            left: 5px;
-            color: rgba(255,255,255,0.4);
+            top: 10px;
+            left: 15px;
+            font-family: 'Courier New', monospace;
             font-size: 12px;
-            letter-spacing: 2px;
+            color: #2DD512;
+            z-index: 20;
+            text-shadow: 0 0 10px rgba(45, 213, 18, 0.5);
+        }
+        
+        .screen-stats {
+            position: absolute;
+            bottom: 10px;
+            right: 15px;
+            font-family: 'Courier New', monospace;
+            font-size: 11px;
+            color: #2DD512;
+            z-index: 20;
+            display: flex;
+            gap: 15px;
+            text-shadow: 0 0 10px rgba(45, 213, 18, 0.5);
+        }
+        
+        .screen-stand {
+            position: absolute;
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 40px;
+            background: linear-gradient(to bottom, #3a3a4e, #2a2a3e);
+            clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+        }
+        
+        .screen-base {
+            position: absolute;
+            bottom: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 15px;
+            background: #2a2a3e;
+            border-radius: 50%;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+        }
+        
+        .lab-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 100;
+        }
+        
+        .lab-corner {
+            position: absolute;
+            font-family: 'Courier New', monospace;
+            font-size: 11px;
+            color: rgba(45, 213, 18, 0.7);
+            text-shadow: 0 0 10px rgba(45, 213, 18, 0.3);
+            padding: 20px;
+        }
+        
+        .lab-corner-tl { top: 20px; left: 20px; }
+        .lab-corner-tr { top: 20px; right: 20px; text-align: right; }
+        .lab-corner-bl { bottom: 20px; left: 20px; }
+        .lab-corner-br { bottom: 20px; right: 20px; text-align: right; }
+        
+        .lab-data div, .lab-coords div {
+            margin-bottom: 5px;
+        }
+        
+        .lab-warning {
+            color: #ff6b6b;
+            text-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+        
+        .lab-equipment {
+            position: absolute;
+            font-size: 30px;
+            opacity: 0.3;
+        }
+        
+        .equipment-1 { top: 20%; left: 10%; transform: translateZ(-40vw); }
+        .equipment-2 { top: 60%; left: 15%; transform: translateZ(-35vw); }
+        .equipment-3 { top: 30%; right: 10%; transform: translateZ(-45vw); }
+        
+        .transition-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: #0a0a0f;
+            opacity: 0;
+            pointer-events: none;
+            z-index: 9999;
+            transition: opacity 0.5s;
+        }
+        
+        .transition-overlay.active {
+            opacity: 1;
+        }
+        
+        .lab-container.zoomed {
+            opacity: 0;
             pointer-events: none;
         }
         
@@ -194,13 +419,20 @@
             z-index: 10000;
             background: rgba(7, 7, 8, 0.85);
             backdrop-filter: blur(10px);
-            border-top: none;
         }
         
         .orage-hero {
-            padding: 80px 0 0 0;
-            height: 100vh;
+            height: 300vh;
+            position: relative;
+            padding: 0;
         }
+        
+        .app-shell {
+            position: relative;
+            z-index: 100;
+            background: var(--bg);
+        }
+
 
 
     </style>
@@ -242,12 +474,75 @@
     <section class="orage-hero">
         
     
-    <div class="video-canvas" id="videoCanvas">
-            <div class="video-tile" id="tile1" style="left: 5%; top: 10%; width: 45%; height: 35%;">
-                <video autoplay muted loop playsinline>
-                    <source src="../media/Animation_Reel.mp4" type="video/mp4">
-                </video>
-                <div class="tile-handle"></div>
+    
+    <div class="lab-container" id="labContainer">
+            <div class="lab-room">
+                <!-- Lab walls -->
+                <div class="lab-wall lab-wall-back"></div>
+                <div class="lab-wall lab-wall-left"></div>
+                <div class="lab-wall lab-wall-right"></div>
+                <div class="lab-floor"></div>
+                <div class="lab-ceiling"></div>
+                
+                <!-- Lab equipment / decoration -->
+                <div class="lab-equipment equipment-1">⚡</div>
+                <div class="lab-equipment equipment-2">🔬</div>
+                <div class="lab-equipment equipment-3">⚛️</div>
+                
+                <!-- The main screen -->
+                <div class="lab-screen-container" id="labScreen">
+                    <div class="crt-frame">
+                        <div class="crt-screen">
+                            <div class="crt-scanlines"></div>
+                            <div class="crt-flicker"></div>
+                            <div class="crt-glow"></div>
+                            <video autoplay muted loop playsinline id="labVideo">
+                                <source src="../media/Animation_Reel.mp4" type="video/mp4">
+                            </video>
+                            <div class="screen-label">MONITOR-01</div>
+                            <div class="screen-stats">
+                                <span>REC ●</span>
+                                <span id="timecode">00:00:00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="screen-stand"></div>
+                    <div class="screen-base"></div>
+                </div>
+                
+                <!-- Lab UI overlay -->
+                <div class="lab-overlay">
+                    <div class="lab-corner lab-corner-tl">
+                        <div class="lab-data">
+                            <div>SYS.STATUS: ONLINE</div>
+                            <div>TEMP: 22.4°C</div>
+                            <div>HUMIDITY: 45%</div>
+                        </div>
+                    </div>
+                    <div class="lab-corner lab-corner-tr">
+                        <div class="lab-coords">
+                            <div>X: 45.234</div>
+                            <div>Y: 78.901</div>
+                            <div>Z: 12.567</div>
+                        </div>
+                    </div>
+                    <div class="lab-corner lab-corner-bl">
+                        <div class="lab-warning">
+                            ⚠ CAUTION: ACTIVE EXPERIMENT
+                        </div>
+                    </div>
+                    <div class="lab-corner lab-corner-br">
+                        <div class="lab-id">
+                            LAB-7 // SECTOR-4<br>
+                            CLEARANCE: LEVEL 3
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Transition overlay -->
+        <div class="transition-overlay" id="transitionOverlay"></div>
             </div>
             <div class="video-tile" id="tile2" style="left: 52%; top: 15%; width: 40%; height: 30%;">
                 <video autoplay muted loop playsinline>
