@@ -166,20 +166,29 @@
 
         @media (max-width: 768px) {
             .orage-hero { padding: 20px; }
-            .orage-menu { display: none; }
+            .orage-menu { display: flex; gap: 20px; font-size: 12px; }
             .orage-title { font-size: 40px; }
         }
 
-        /* Adjust original app-shell so it flows naturally after the 100vh hero */
-        .topbar {
-            position: absolute !important;
-            top: 100vh !important;
-            transition: position 0s, top 0s;
+        
+        .orage-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 20px 40px;
+            background: rgba(0,0,0,0.9);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            transition: transform 0.3s;
         }
         
-        .topbar.sticky {
-            position: fixed !important;
-            top: 0 !important;
+        .orage-nav.hidden {
+            transform: translateY(-100%);
+        }
+        
+        .orage-hero {
+            padding-top: 80px;
         }
     </style>
 \n<body>\n
@@ -198,7 +207,8 @@
 
     <!-- ORAGE HERO -->
     <section class="orage-hero">
-        <video class="orage-video-bg" autoplay muted loop playsinline>
+        <video class="orage-video-bg" autoplay muted loop playsinline poster="../media/front.jpeg">
+            <source src="https://orage.studio/wp-content/uploads/2025/08/SHOWREEL_2025_Extrait_v02.mp4" type="video/mp4">
             <source src="https://orage.studio/wp-content/uploads/2023/10/Showreel-2023_V2-1080p.mp4" type="video/mp4">
         </video>
         <div class="orage-nav">
@@ -218,24 +228,6 @@
     </section>
 
     <div class="app-shell">
-      <header class="topbar">
-        <div class="topbar-left">
-          <a class="brand-mark" href="/work" aria-label="Home">
-            <img src="../logo-nm.png" alt="Nico Maggioli logo" loading="eager" decoding="async" />
-          </a>
-          <a class="search-link" href="/work" aria-label="Portfolio home">Nico Maggioli</a>
-        </div>
-
-        <div class="topbar-right">
-          <nav class="top-nav" aria-label="Site">
-            <a class="top-nav-link is-active" href="/work">Work</a>
-            <a class="top-nav-link" href="/projects">Projects</a>
-            <a class="top-nav-link" href="/about">About</a>
-            <a class="top-nav-link" href="/contact">Contact</a>
-          </nav>
-        </div>
-      </header>
-
       <main class="page-shell">
         <section class="channel-head">
           <h1 class="channel-title">Nico Maggioli / Design Lab / Live Work Archive</h1>
