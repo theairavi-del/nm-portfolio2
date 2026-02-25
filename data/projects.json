@@ -1,0 +1,114 @@
+{
+  "mainProjects": [
+    {
+      "id": "boreal",
+      "title": "Boreal",
+      "description": "Creative strategy and visual identity for a cold-weather apparel brand.",
+      "heroImage": "../media/boreal/hero.png",
+      "link": "/boreal",
+      "category": "Brand Identity",
+      "year": "2024"
+    },
+    {
+      "id": "nestquest",
+      "title": "Nestquest",
+      "description": "Digital product design for a real estate discovery platform.",
+      "heroImage": "../media/nestquest/hero.png",
+      "link": "/nestquest",
+      "category": "Digital Product",
+      "year": "2024"
+    },
+    {
+      "id": "peak",
+      "title": "Peak",
+      "description": "Visual identity and 3D campaign for an outdoor performance brand.",
+      "heroImage": "../media/peak/hero.png",
+      "link": "/peak",
+      "category": "Campaign",
+      "year": "2023"
+    },
+    {
+      "id": "cognis",
+      "title": "Cognis",
+      "description": "Brand system and web experience for an AI research lab.",
+      "heroImage": "../media/cognis/llk2v2ue8sghF49ztVTxIJM.png",
+      "link": "/cognis",
+      "category": "Brand + Web",
+      "year": "2023"
+    },
+    {
+      "id": "pawlish",
+      "title": "Pawlish",
+      "description": "Packaging and brand identity for a premium pet care line.",
+      "heroImage": "../media/pawlish/hero.png",
+      "link": "/pawlish",
+      "category": "Packaging",
+      "year": "2023"
+    },
+    {
+      "id": "mirage",
+      "title": "Mirage",
+      "description": "Experimental 3D art direction and visual exploration.",
+      "heroImage": "../media/mirage/1.png",
+      "link": "/mirage",
+      "category": "3D Art Direction",
+      "year": "2023"
+    },
+    {
+      "id": "oxa",
+      "title": "OXA",
+      "description": "Brand identity and digital experience for a tech startup.",
+      "heroImage": "../media/oxa/hero.png",
+      "link": "/oxa",
+      "category": "Brand Identity",
+      "year": "2022"
+    }
+  ],
+  "otherProjects": [
+    {
+      "id": "3d-print",
+      "title": "3D Print",
+      "description": "Custom 3D printed objects and prototypes.",
+      "heroImage": "../media/3dprint/hero.png",
+      "link": "/3d-print",
+      "category": "3D Design",
+      "year": "2024"
+    },
+    {
+      "id": "blender",
+      "title": "Blender Experiments",
+      "description": "Personal 3D experiments and visual studies.",
+      "heroImage": "../media/blender/hero.png",
+      "link": "/blender",
+      "category": "3D Art",
+      "year": "2024"
+    },
+    {
+      "id": "fingerboard",
+      "title": "Fingerboard",
+      "description": "3D modeled and rendered fingerboard designs.",
+      "heroImage": "../media/fingerboard/hero.png",
+      "link": "/fingerboard",
+      "category": "3D Product",
+      "year": "2023"
+    },
+    {
+      "id": "logos",
+      "title": "Logo Collection",
+      "description": "Selected logo designs and brand marks.",
+      "heroImage": "../media/logos/hero.png",
+      "link": "/logos",
+      "category": "Logo Design",
+      "year": "2023"
+    },
+    {
+      "id": "music",
+      "title": "Music Visuals",
+      "description": "Album artwork and visualizers for musicians.",
+      "heroImage": "../media/music/hero.png",
+      "link": "/music",
+      "category": "Music Art",
+      "year": "2022"
+    }
+  ]
+}

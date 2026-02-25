@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nico Maggioli - Content Admin</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: #0a0a0f;
+            color: #d3d3d9;
+            line-height: 1.5;
+        }
+        
+        .admin-header {
+            background: #111118;
+            border-bottom: 1px solid #2a2a3e;
+            padding: 20px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .admin-header h1 {
+            font-size: 24px;
+            font-weight: 500;
+            color: #fff;
+        }
+        
+        .admin-header p {
+            color: #8c8c95;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        
+        .admin-nav {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .admin-nav button {
+            background: transparent;
+            border: 1px solid #3a3a4e;
+            color: #d3d3d9;
+            padding: 8px 16px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+        
+        .admin-nav button:hover,
+        .admin-nav button.active {
+            background: #2DD512;
+            border-color: #2DD512;
+            color: #000;
+        }
+        
+        .admin-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px;
+        }
+        
+        .section-title {
+            font-size: 20px;
+            color: #fff;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .add-btn {
+            background: #2DD512;
+            color: #000;
+            border: none;
+            padding: 8px 16px;
+            font-size: 14px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+        
+        .projects-grid {
+            display: grid;
+            gap: 20px;
+        }
+        
+        .project-card {
+            background: #111118;
+            border: 1px solid #2a2a3e;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 120px 1fr auto;
+            gap: 20px;
+            align-items: start;
+        }
+        
+        .project-image {
+            width: 120px;
+            height: 120px;
+            background: #1a1a2e;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .project-image-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #4a4a5e;
+            font-size: 12px;
+        }
+        
+        .project-info h3 {
+            color: #fff;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        
+        .project-meta {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 10px;
+            font-size: 13px;
+            color: #8c8c95;
+        }
+        
+        .project-description {
+            color: #ababb4;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+        
+        .project-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .project-actions button {
+            background: transparent;
+            border: 1px solid #3a3a4e;
+            color: #d3d3d9;
+            padding: 6px 12px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .project-actions button:hover {
+            background: #2a2a3e;
+        }
+        
+        .project-actions button.delete:hover {
+            background: #ff4444;
+            border-color: #ff4444;
+            color: #fff;
+        }
+        
+        /* Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.8);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        
+        .modal-overlay.active {
+            display: flex;
+        }
+        
+        .modal {
+            background: #111118;
+            border: 1px solid #2a2a3e;
+            width: 90%;
+            max-width: 600px;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        
+        .modal-header {
+            padding: 20px;
+            border-bottom: 1px solid #2a2a3e;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .modal-header h2 {
+            color: #fff;
+            font-size: 18px;
+        }
+        
+        .modal-close {
+            background: none;
+            border: none;
+            color: #8c8c95;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        .modal-body {
+            padding: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #ababb4;
+            font-size: 14px;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            background: #0a0a0f;
+            border: 1px solid #3a3a4e;
+            color: #d3d3d9;
+            padding: 10px;
+            font-size: 14px;
+            font-family: inherit;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #2DD512;
+        }
+        
+        .form-group textarea {
+            min-height: 80px;
+            resize: vertical;
+        }
+        
+        .modal-footer {
+            padding: 20px;
+            border-top: 1px solid #2a2a3e;
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+        
+        .btn-cancel {
+            background: transparent;
+            border: 1px solid #3a3a4e;
+            color: #d3d3d9;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        
+        .btn-save {
+            background: #2DD512;
+            border: none;
+            color: #000;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+        
+        .hidden {
+            display: none !important;
+        }
+        
+        .save-status {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #2DD512;
+            color: #000;
+            padding: 12px 20px;
+            font-weight: 500;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .save-status.show {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <header class="admin-header">
+        <h1>🎨 Nico Maggioli - Content Admin</h1>
+        <p>Edit your portfolio projects without touching code</p>
+        <nav class="admin-nav">
+            <button class="active" onclick="showSection('main')">Main Projects</button>
+            <button onclick="showSection('other')">Other Work</button>
+        </nav>
+    </header>
+    
+    <main class="admin-content">
+        <section id="mainSection">
+            <div class="section-title">
+                <h2>Main Projects</h2>
+                <button class="add-btn" onclick="openModal('main')">+ Add Project</button>
+            </div>
+            <div class="projects-grid" id="mainProjectsList">
+                <!-- Projects loaded here -->
+            </div>
+        </section>
+        
+        <section id="otherSection" class="hidden">
+            <div class="section-title">
+                <h2>Other Work</h2>
+                <button class="add-btn" onclick="openModal('other')">+ Add Project</button>
+            </div>
+            <div class="projects-grid" id="otherProjectsList">
+                <!-- Projects loaded here -->
+            </div>
+        </section>
+    </main>
+    
+    <!-- Edit Modal -->
+    <div class="modal-overlay" id="editModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 id="modalTitle">Edit Project</h2>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Project Title</label>
+                    <input type="text" id="projectTitle" placeholder="e.g., Boreal">
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea id="projectDescription" placeholder="Brief description of the project..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Category</label>
+                    <input type="text" id="projectCategory" placeholder="e.g., Brand Identity">
+                </div>
+                <div class="form-group">
+                    <label>Year</label>
+                    <input type="text" id="projectYear" placeholder="e.g., 2024">
+                </div>
+                <div class="form-group">
+                    <label>Hero Image Path</label>
+                    <input type="text" id="projectImage" placeholder="../media/project/hero.png">
+                </div>
+                <div class="form-group">
+                    <label>Project Link</label>
+                    <input type="text" id="projectLink" placeholder="/project-name">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-cancel" onclick="closeModal()">Cancel</button>
+                <button class="btn-save" onclick="saveProject()">Save Changes</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="save-status" id="saveStatus">Changes saved!</div>
+    
+    <script src="export.js"></script>
+    <script>
+        // Data storage
+        let projectsData = {
+            mainProjects: [],
+            otherProjects: []
+        };
+        
+        let currentSection = 'main';
+        let editingId = null;
+        
+        // Load data from localStorage or fetch from JSON
+        async function loadData() {
+            try {
+                const response = await fetch('../data/projects.json');
+                if (response.ok) {
+                    projectsData = await response.json();
+                }
+            } catch (e) {
+                console.log('Using default data');
+            }
+            renderProjects();
+        }
+        
+        // Render projects
+        function renderProjects() {
+            const mainList = document.getElementById('mainProjectsList');
+            const otherList = document.getElementById('otherProjectsList');
+            
+            mainList.innerHTML = projectsData.mainProjects.map(p => createProjectCard(p, 'main')).join('');
+            otherList.innerHTML = projectsData.otherProjects.map(p => createProjectCard(p, 'other')).join('');
+        }
+        
+        function createProjectCard(project, section) {
+            return `
+                <div class="project-card">
+                    <div class="project-image">
+                        ${project.heroImage ? `<img src="${project.heroImage}" alt="${project.title}">` : '<div class="project-image-placeholder">No Image</div>'}
+                    </div>
+                    <div class="project-info">
+                        <h3>${project.title}</h3>
+                        <div class="project-meta">
+                            <span>${project.category}</span>
+                            <span>•</span>
+                            <span>${project.year}</span>
+                        </div>
+                        <p class="project-description">${project.description}</p>
+                    </div>
+                    <div class="project-actions">
+                        <button onclick="editProject('${project.id}', '${section}')">Edit</button>
+                        <button class="delete" onclick="deleteProject('${project.id}', '${section}')">Delete</button>
+                    </div>
+                </div>
+            `;
+        }
+        
+        // Navigation
+        function showSection(section) {
+            currentSection = section;
+            document.querySelectorAll('.admin-nav button').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            if (section === 'main') {
+                document.getElementById('mainSection').classList.remove('hidden');
+                document.getElementById('otherSection').classList.add('hidden');
+            } else {
+                document.getElementById('mainSection').classList.add('hidden');
+                document.getElementById('otherSection').classList.remove('hidden');
+            }
+        }
+        
+        // Modal functions
+        function openModal(section) {
+            editingId = null;
+            currentSection = section;
+            document.getElementById('modalTitle').textContent = 'Add New Project';
+            document.getElementById('projectTitle').value = '';
+            document.getElementById('projectDescription').value = '';
+            document.getElementById('projectCategory').value = '';
+            document.getElementById('projectYear').value = '';
+            document.getElementById('projectImage').value = '';
+            document.getElementById('projectLink').value = '';
+            document.getElementById('editModal').classList.add('active');
+        }
+        
+        function editProject(id, section) {
+            editingId = id;
+            currentSection = section;
+            const project = projectsData[section + 'Projects'].find(p => p.id === id);
+            
+            if (project) {
+                document.getElementById('modalTitle').textContent = 'Edit Project';
+                document.getElementById('projectTitle').value = project.title;
+                document.getElementById('projectDescription').value = project.description;
+                document.getElementById('projectCategory').value = project.category;
+                document.getElementById('projectYear').value = project.year;
+                document.getElementById('projectImage').value = project.heroImage;
+                document.getElementById('projectLink').value = project.link;
+                document.getElementById('editModal').classList.add('active');
+            }
+        }
+        
+        function closeModal() {
+            document.getElementById('editModal').classList.remove('active');
+        }
+        
+        function saveProject() {
+            const title = document.getElementById('projectTitle').value;
+            const description = document.getElementById('projectDescription').value;
+            const category = document.getElementById('projectCategory').value;
+            const year = document.getElementById('projectYear').value;
+            const heroImage = document.getElementById('projectImage').value;
+            const link = document.getElementById('projectLink').value;
+            
+            if (!title) {
+                alert('Please enter a project title');
+                return;
+            }
+            
+            const sectionKey = currentSection + 'Projects';
+            
+            if (editingId) {
+                // Update existing
+                const index = projectsData[sectionKey].findIndex(p => p.id === editingId);
+                if (index !== -1) {
+                    projectsData[sectionKey][index] = {
+                        ...projectsData[sectionKey][index],
+                        title,
+                        description,
+                        category,
+                        year,
+                        heroImage,
+                        link
+                    };
+                }
+            } else {
+                // Add new
+                const newId = title.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+                projectsData[sectionKey].push({
+                    id: newId,
+                    title,
+                    description,
+                    category,
+                    year,
+                    heroImage,
+                    link: link || '/' + newId
+                });
+            }
+            
+            // Save to localStorage
+            localStorage.setItem('nmPortfolioProjects', JSON.stringify(projectsData));
+            
+            renderProjects();
+            closeModal();
+            showSaveStatus();
+        }
+        
+        function deleteProject(id, section) {
+            if (confirm('Are you sure you want to delete this project?')) {
+                const sectionKey = section + 'Projects';
+                projectsData[sectionKey] = projectsData[sectionKey].filter(p => p.id !== id);
+                localStorage.setItem('nmPortfolioProjects', JSON.stringify(projectsData));
+                renderProjects();
+                showSaveStatus();
+            }
+        }
+        
+        function showSaveStatus() {
+            const status = document.getElementById('saveStatus');
+            status.classList.add('show');
+            setTimeout(() => status.classList.remove('show'), 2000);
+        }
+        
+        // Initialize
+        loadData();
+    </script>
+</body>
+</html>
