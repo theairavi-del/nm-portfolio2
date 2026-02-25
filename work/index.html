@@ -105,6 +105,79 @@
         }
 
         .orage-hero { padding: 0; }
+    
+        .fixed-topbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 10000;
+            background: rgba(7, 7, 8, 0.7);
+            backdrop-filter: blur(10px);
+            border-top: none;
+        }
+        
+        .video-layers {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        .orage-video-bg {
+            position: absolute;
+            object-fit: cover;
+            opacity: 0.7;
+        }
+        
+        .orage-video-bg.layer-1 {
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            filter: brightness(0.5);
+        }
+        
+        .orage-video-bg.layer-2 {
+            top: 10%;
+            left: 5%;
+            width: 60%;
+            height: 60%;
+            z-index: -2;
+            filter: brightness(0.4) blur(2px);
+            opacity: 0.5;
+            transform: scale(1.2);
+        }
+        
+        .orage-video-bg.layer-3 {
+            top: 30%;
+            right: 5%;
+            width: 50%;
+            height: 50%;
+            z-index: -3;
+            filter: brightness(0.3) blur(4px);
+            opacity: 0.4;
+            transform: scale(1.5);
+        }
+        
+        .orage-video-bg.layer-4 {
+            bottom: 10%;
+            left: 20%;
+            width: 40%;
+            height: 40%;
+            z-index: -4;
+            filter: brightness(0.2) blur(6px);
+            opacity: 0.3;
+            transform: scale(2);
+        }
+        
+        .orage-hero {
+            padding: 80px 40px 40px;
+        }
+
     </style>
 <body>
 
@@ -121,16 +194,8 @@
         </div>
     </div>
 
-    <!-- ORAGE HERO -->
-    <section class="orage-hero">
-        <video class="orage-video-bg" autoplay muted loop playsinline poster="../media/front.jpeg">
-            <source src="../media/Animation_Reel.mp4" type="video/mp4">
-        </video>
-        </section>
-
     
-    <div class="app-shell">
-      <header class="topbar">
+    <header class="topbar fixed-topbar">
         <div class="topbar-left">
           <a class="brand-mark" href="/work" aria-label="Home">
             <img src="../logo-nm.png" alt="Nico Maggioli logo" loading="eager" decoding="async" />
@@ -147,6 +212,28 @@
           </nav>
         </div>
       </header>
+
+    <!-- ORAGE HERO -->
+    <section class="orage-hero">
+        
+    <div class="video-layers">
+            <video class="orage-video-bg layer-1" autoplay muted loop playsinline poster="../media/front.jpeg">
+                <source src="../media/Animation_Reel.mp4" type="video/mp4">
+            </video>
+            <video class="orage-video-bg layer-2" autoplay muted loop playsinline>
+                <source src="../media/Animation_Reel.mp4" type="video/mp4">
+            </video>
+            <video class="orage-video-bg layer-3" autoplay muted loop playsinline>
+                <source src="../media/Animation_Reel.mp4" type="video/mp4">
+            </video>
+            <video class="orage-video-bg layer-4" autoplay muted loop playsinline>
+                <source src="../media/Animation_Reel.mp4" type="video/mp4">
+            </video>
+        </div>
+        </section>
+
+    
+    <div class="app-shell">
 
       <main class="page-shell">
         <section class="channel-head">
@@ -276,6 +363,14 @@
                     clearInterval(interval);
                     setTimeout(() => {
                         if(loader) loader.classList.add('hidden');
+            
+        // Stagger video start times for layered effect
+        const videos = document.querySelectorAll('.orage-video-bg');
+        videos.forEach((video, index) => {
+            video.currentTime = index * 2; // Start each video 2 seconds apart
+            video.play().catch(e => console.log('Video play failed:', e));
+        });
+
                     }, 400);
                 }
             }, 80);
