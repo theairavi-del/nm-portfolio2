@@ -26,7 +26,41 @@
     
     Happy hunting! 🎨
     -->
-  <body>
+  <body>\n
+    <!-- ORAGE LOADER -->
+    <div class="loader-overlay" id="orage-loader">
+        <div class="loader-content">
+            <div>Console setup</div>
+            <div>-------------</div>
+            <div id="loader-text">Loading site : 0%</div>
+            <div>Setting type : {NICOMAGGIOLI PORTFOLIO}</div>
+            <div class="loader-bar-container">
+                <div class="loader-bar" id="loader-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ORAGE HERO -->
+    <section class="orage-hero">
+        <video class="orage-video-bg" autoplay muted loop playsinline>
+            <source src="https://orage.studio/wp-content/uploads/2023/10/Showreel-2023_V2-1080p.mp4" type="video/mp4">
+        </video>
+        <div class="orage-nav">
+            <div class="orage-logo" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                NICOMAGGIOLI
+            </div>
+            <div class="orage-menu">
+                <a onclick="document.querySelector('.app-shell').scrollIntoView({behavior: 'smooth'})">Work</a>
+                <a href="../projects">Projects</a>
+                <a href="../about">About</a>
+                <a href="../contact">Contact</a>
+            </div>
+        </div>
+        <div>
+            <h1 class="orage-title">NICOMAGGIOLI</h1>
+        </div>
+    </section>
+
     <div class="app-shell">
       <header class="topbar">
         <div class="topbar-left">
@@ -154,5 +188,30 @@
 
     <script src="../media-index.js?v=20260218-12"></script>
     <script src="../app.js?v=arena-20260218-12" defer></script>
-  </body>
+  
+    <script>
+        // ORAGE LOADER LOGIC
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('orage-loader');
+            const loaderBar = document.getElementById('loader-bar');
+            const loaderText = document.getElementById('loader-text');
+            
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += Math.floor(Math.random() * 15) + 5;
+                if (progress > 100) progress = 100;
+                
+                if(loaderBar) loaderBar.style.width = progress + '%';
+                if(loaderText) loaderText.innerText = 'Loading site : ' + progress + '%';
+                
+                if (progress === 100) {
+                    clearInterval(interval);
+                    setTimeout(() => {
+                        if(loader) loader.classList.add('hidden');
+                    }, 400);
+                }
+            }, 80);
+        });
+    </script>
+\n  </body>
 </html>
