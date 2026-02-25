@@ -475,74 +475,25 @@
         
     
     
-    <div class="lab-container" id="labContainer">
-            <div class="lab-room">
-                <!-- Lab walls -->
-                <div class="lab-wall lab-wall-back"></div>
-                <div class="lab-wall lab-wall-left"></div>
-                <div class="lab-wall lab-wall-right"></div>
-                <div class="lab-floor"></div>
-                <div class="lab-ceiling"></div>
-                
-                <!-- Lab equipment / decoration -->
-                <div class="lab-equipment equipment-1">⚡</div>
-                <div class="lab-equipment equipment-2">🔬</div>
-                <div class="lab-equipment equipment-3">⚛️</div>
-                
-                <!-- The main screen -->
-                <div class="lab-screen-container" id="labScreen">
-                    <div class="crt-frame">
-                        <div class="crt-screen">
-                            <div class="crt-scanlines"></div>
-                            <div class="crt-flicker"></div>
-                            <div class="crt-glow"></div>
-                            <video autoplay muted loop playsinline id="labVideo">
-                                <source src="../media/Animation_Reel.mp4" type="video/mp4">
-                            </video>
-                            <div class="screen-label">MONITOR-01</div>
-                            <div class="screen-stats">
-                                <span>REC ●</span>
-                                <span id="timecode">00:00:00</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="screen-stand"></div>
-                    <div class="screen-base"></div>
-                </div>
-                
-                <!-- Lab UI overlay -->
-                <div class="lab-overlay">
-                    <div class="lab-corner lab-corner-tl">
-                        <div class="lab-data">
-                            <div>SYS.STATUS: ONLINE</div>
-                            <div>TEMP: 22.4°C</div>
-                            <div>HUMIDITY: 45%</div>
-                        </div>
-                    </div>
-                    <div class="lab-corner lab-corner-tr">
-                        <div class="lab-coords">
-                            <div>X: 45.234</div>
-                            <div>Y: 78.901</div>
-                            <div>Z: 12.567</div>
-                        </div>
-                    </div>
-                    <div class="lab-corner lab-corner-bl">
-                        <div class="lab-warning">
-                            ⚠ CAUTION: ACTIVE EXPERIMENT
-                        </div>
-                    </div>
-                    <div class="lab-corner lab-corner-br">
-                        <div class="lab-id">
-                            LAB-7 // SECTOR-4<br>
-                            CLEARANCE: LEVEL 3
+    
+    <div class="hero-video-section">
+            <div class="crt-monitor">
+                <div class="monitor-frame">
+                    <div class="monitor-screen">
+                        <video autoplay muted loop playsinline>
+                            <source src="../media/Animation_Reel.mp4" type="video/mp4">
+                        </video>
+                        <div class="scanlines"></div>
+                        <div class="screen-glow"></div>
+                        <div class="screen-text">
+                            <div class="screen-label">MONITOR-01 // ANIMATION REEL</div>
+                            <div class="screen-status">STATUS: <span class="blink">RECORDING</span></div>
                         </div>
                     </div>
                 </div>
+                <div class="monitor-stand"></div>
             </div>
         </div>
-        
-        <!-- Transition overlay -->
-        <div class="transition-overlay" id="transitionOverlay"></div>
             </div>
             <div class="video-tile" id="tile2" style="left: 52%; top: 15%; width: 40%; height: 30%;">
                 <video autoplay muted loop playsinline>
