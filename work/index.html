@@ -117,66 +117,91 @@
             border-top: none;
         }
         
-        .video-layers {
+        
+        .video-canvas {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             overflow: hidden;
+            background: #000;
         }
         
-        .orage-video-bg {
+        .video-tile {
             position: absolute;
-            object-fit: cover;
-            opacity: 0.7;
+            cursor: move;
+            border: 2px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+            background: #111;
         }
         
-        .orage-video-bg.layer-1 {
-            top: 0;
-            left: 0;
+        .video-tile:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+            border-color: rgba(255,255,255,0.3);
+            z-index: 100 !important;
+        }
+        
+        .video-tile.dragging {
+            opacity: 0.8;
+            transform: scale(1.05);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+            z-index: 1000 !important;
+        }
+        
+        .video-tile video {
             width: 100%;
             height: 100%;
-            z-index: -1;
-            filter: brightness(0.5);
+            object-fit: cover;
+            pointer-events: none;
         }
         
-        .orage-video-bg.layer-2 {
-            top: 10%;
-            left: 5%;
-            width: 60%;
-            height: 60%;
-            z-index: -2;
-            filter: brightness(0.4) blur(2px);
-            opacity: 0.5;
-            transform: scale(1.2);
+        .tile-handle {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            width: 20px;
+            height: 20px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            cursor: grab;
         }
         
-        .orage-video-bg.layer-3 {
-            top: 30%;
-            right: 5%;
-            width: 50%;
-            height: 50%;
-            z-index: -3;
-            filter: brightness(0.3) blur(4px);
-            opacity: 0.4;
-            transform: scale(1.5);
+        .tile-handle:active {
+            cursor: grabbing;
+            background: rgba(255,255,255,0.5);
         }
         
-        .orage-video-bg.layer-4 {
-            bottom: 10%;
-            left: 20%;
-            width: 40%;
-            height: 40%;
-            z-index: -4;
-            filter: brightness(0.2) blur(6px);
-            opacity: 0.3;
-            transform: scale(2);
+        .video-tile::before {
+            content: '⋮⋮';
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            color: rgba(255,255,255,0.4);
+            font-size: 12px;
+            letter-spacing: 2px;
+            pointer-events: none;
+        }
+        
+        .fixed-topbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 10000;
+            background: rgba(7, 7, 8, 0.85);
+            backdrop-filter: blur(10px);
+            border-top: none;
         }
         
         .orage-hero {
-            padding: 80px 40px 40px;
+            padding: 80px 0 0 0;
+            height: 100vh;
         }
+
 
     </style>
 <body>
@@ -216,19 +241,38 @@
     <!-- ORAGE HERO -->
     <section class="orage-hero">
         
-    <div class="video-layers">
-            <video class="orage-video-bg layer-1" autoplay muted loop playsinline poster="../media/front.jpeg">
-                <source src="../media/Animation_Reel.mp4" type="video/mp4">
-            </video>
-            <video class="orage-video-bg layer-2" autoplay muted loop playsinline>
-                <source src="../media/Animation_Reel.mp4" type="video/mp4">
-            </video>
-            <video class="orage-video-bg layer-3" autoplay muted loop playsinline>
-                <source src="../media/Animation_Reel.mp4" type="video/mp4">
-            </video>
-            <video class="orage-video-bg layer-4" autoplay muted loop playsinline>
-                <source src="../media/Animation_Reel.mp4" type="video/mp4">
-            </video>
+    
+    <div class="video-canvas" id="videoCanvas">
+            <div class="video-tile" id="tile1" style="left: 5%; top: 10%; width: 45%; height: 35%;">
+                <video autoplay muted loop playsinline>
+                    <source src="../media/Animation_Reel.mp4" type="video/mp4">
+                </video>
+                <div class="tile-handle"></div>
+            </div>
+            <div class="video-tile" id="tile2" style="left: 52%; top: 15%; width: 40%; height: 30%;">
+                <video autoplay muted loop playsinline>
+                    <source src="../media/Animation_Reel.mp4" type="video/mp4">
+                </video>
+                <div class="tile-handle"></div>
+            </div>
+            <div class="video-tile" id="tile3" style="left: 8%; top: 50%; width: 35%; height: 40%;">
+                <video autoplay muted loop playsinline>
+                    <source src="../media/Animation_Reel.mp4" type="video/mp4">
+                </video>
+                <div class="tile-handle"></div>
+            </div>
+            <div class="video-tile" id="tile4" style="left: 48%; top: 52%; width: 42%; height: 38%;">
+                <video autoplay muted loop playsinline>
+                    <source src="../media/Animation_Reel.mp4" type="video/mp4">
+                </video>
+                <div class="tile-handle"></div>
+            </div>
+            <div class="video-tile" id="tile5" style="left: 25%; top: 35%; width: 30%; height: 25%; z-index: 10;">
+                <video autoplay muted loop playsinline>
+                    <source src="../media/Animation_Reel.mp4" type="video/mp4">
+                </video>
+                <div class="tile-handle"></div>
+            </div>
         </div>
         </section>
 
@@ -364,12 +408,96 @@
                     setTimeout(() => {
                         if(loader) loader.classList.add('hidden');
             
-        // Stagger video start times for layered effect
-        const videos = document.querySelectorAll('.orage-video-bg');
-        videos.forEach((video, index) => {
-            video.currentTime = index * 2; // Start each video 2 seconds apart
-            video.play().catch(e => console.log('Video play failed:', e));
+        
+        // Draggable video tiles
+        const tiles = document.querySelectorAll('.video-tile');
+        let activeTile = null;
+        let initialX, initialY;
+        let currentX = 0, currentY = 0;
+        let xOffset = 0, yOffset = 0;
+        
+        tiles.forEach((tile, index) => {
+            // Stagger video start times
+            const video = tile.querySelector('video');
+            if(video) {
+                video.currentTime = index * 1.5;
+            }
+            
+            tile.addEventListener('mousedown', dragStart);
+            tile.addEventListener('touchstart', dragStart, {passive: false});
         });
+        
+        document.addEventListener('mousemove', drag);
+        document.addEventListener('mouseup', dragEnd);
+        document.addEventListener('touchmove', drag, {passive: false});
+        document.addEventListener('touchend', dragEnd);
+        
+        function dragStart(e) {
+            if (e.target.classList.contains('tile-handle') || e.target.closest('.video-tile')) {
+                activeTile = e.target.closest('.video-tile');
+                activeTile.classList.add('dragging');
+                
+                const clientX = e.type === 'touchstart' ? e.touches[0].clientX : e.clientX;
+                const clientY = e.type === 'touchstart' ? e.touches[0].clientY : e.clientY;
+                
+                initialX = clientX - xOffset;
+                initialY = clientY - yOffset;
+            }
+        }
+        
+        function drag(e) {
+            if (activeTile) {
+                e.preventDefault();
+                
+                const clientX = e.type === 'touchmove' ? e.touches[0].clientX : e.clientX;
+                const clientY = e.type === 'touchmove' ? e.touches[0].clientY : e.clientY;
+                
+                currentX = clientX - initialX;
+                currentY = clientY - initialY;
+                
+                xOffset = currentX;
+                yOffset = currentY;
+                
+                const canvas = document.getElementById('videoCanvas');
+                const canvasRect = canvas.getBoundingClientRect();
+                const tileRect = activeTile.getBoundingClientRect();
+                
+                // Calculate position as percentages
+                const leftPercent = ((tileRect.left - canvasRect.left + currentX) / canvasRect.width) * 100;
+                const topPercent = ((tileRect.top - canvasRect.top + currentY) / canvasRect.height) * 100;
+                
+                activeTile.style.left = leftPercent + '%';
+                activeTile.style.top = topPercent + '%';
+                activeTile.style.transform = `translate(${currentX}px, ${currentY}px)`;
+            }
+        }
+        
+        function dragEnd(e) {
+            if (activeTile) {
+                const canvas = document.getElementById('videoCanvas');
+                const canvasRect = canvas.getBoundingClientRect();
+                const tileRect = activeTile.getBoundingClientRect();
+                
+                // Snap to final position
+                const leftPercent = ((tileRect.left - canvasRect.left) / canvasRect.width) * 100;
+                const topPercent = ((tileRect.top - canvasRect.top) / canvasRect.height) * 100;
+                
+                activeTile.style.left = Math.max(0, Math.min(85, leftPercent)) + '%';
+                activeTile.style.top = Math.max(0, Math.min(80, topPercent)) + '%';
+                activeTile.style.transform = 'none';
+                
+                initialX = 0;
+                initialY = 0;
+                currentX = 0;
+                currentY = 0;
+                xOffset = 0;
+                yOffset = 0;
+                
+                activeTile.classList.remove('dragging');
+                activeTile = null;
+            }
+        }
+
 
                     }, 400);
                 }
